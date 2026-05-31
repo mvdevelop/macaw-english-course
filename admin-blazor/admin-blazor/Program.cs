@@ -21,5 +21,7 @@ builder.Services.AddAuthorizationCore();
 builder.Services.AddScoped<CustomAuthStateProvider>();
 builder.Services.AddScoped<AuthenticationStateProvider>(s => s.GetRequiredService<CustomAuthStateProvider>());
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<CourseService>();
+builder.Services.AddScoped<StudentService>();
 
 await builder.Build().RunAsync();

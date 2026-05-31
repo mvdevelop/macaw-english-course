@@ -20,6 +20,10 @@ builder.Services.AddSingleton<MongoDbService>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ILessonRepository, LessonRepository>();
+builder.Services.AddScoped<IModuleTestRepository, ModuleTestRepository>();
+builder.Services.AddScoped<ITestResultRepository, TestResultRepository>();
+builder.Services.AddScoped<IProgressRepository, ProgressRepository>();
 
 // Add CORS
 builder.Services.AddCors(options =>

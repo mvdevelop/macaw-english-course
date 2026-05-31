@@ -5,6 +5,10 @@ import Footer from "./components/Footer"
 import LenisScroll from "./components/Lenis"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
+import MyCourses from "./pages/MyCourses"
+import CoursePage from "./pages/CoursePage"
+import LessonViewer from "./pages/LessonViewer"
+import TestPage from "./pages/TestPage"
 import DashboardLayout from "./pages/dashboard/DashboardLayout"
 import DashboardHome from "./pages/dashboard/DashboardHome"
 import { useAuth } from "./context/AuthContext"
@@ -42,22 +46,19 @@ export default function App() {
             <Route path="/" element={<LandingLayout />} />
 
             {/* Auth routes (no navbar/footer) */}
-            <Route
-                path="/login"
-                element={<PublicOnlyRoute><Login /></PublicOnlyRoute>}
-            />
-            <Route
-                path="/signup"
-                element={<PublicOnlyRoute><Signup /></PublicOnlyRoute>}
-            />
+            <Route path="/login" element={<PublicOnlyRoute><Login /></PublicOnlyRoute>} />
+            <Route path="/signup" element={<PublicOnlyRoute><Signup /></PublicOnlyRoute>} />
 
             {/* Protected dashboard routes */}
-            <Route
-                path="/dashboard"
-                element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}
-            >
+            <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
                 <Route index element={<DashboardHome />} />
             </Route>
+
+            {/* Protected course routes (no navbar/footer) */}
+            <Route path="/my-courses" element={<ProtectedRoute><MyCourses /></ProtectedRoute>} />
+            <Route path="/course/:levelCode" element={<ProtectedRoute><CoursePage /></ProtectedRoute>} />
+            <Route path="/lesson/:lessonId" element={<ProtectedRoute><LessonViewer /></ProtectedRoute>} />
+            <Route path="/test/module/:moduleId/:levelCode" element={<ProtectedRoute><TestPage /></ProtectedRoute>} />
         </Routes>
     );
 }

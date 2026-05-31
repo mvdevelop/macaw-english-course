@@ -28,10 +28,11 @@ namespace admin_blazor.Auth
             }
 
             var admin = System.Text.Json.JsonSerializer.Deserialize<AdminUser>(adminJson);
+            if (admin == null) return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
 
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, admin.Id),
+                new Claim(ClaimTypes.NameIdentifier, admin!.Id),
                 new Claim(ClaimTypes.Name, admin.Name),
                 new Claim(ClaimTypes.Email, admin.Email)
             };

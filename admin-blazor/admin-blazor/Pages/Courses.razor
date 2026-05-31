@@ -1,0 +1,264 @@
+@page "/courses"
+@attribute [Microsoft.AspNetCore.Authorization.Authorize]
+@inject CourseService CourseService
+@using admin_blazor.Models
+
+<PageTitle>Cursos - Macaw Admin</PageTitle>
+
+<!-- Notification -->
+@if (!string.IsNullOrEmpty(notification))
+{
+    <div class="alert @(notificationType == "success" ? "alert-success" : "alert-danger")">
+        @notification
+        <button class="alert-close" @onclick="() => notification = null">&times;</button>
+    </div>
+}
+
+<!-- Toolbar -->
+<div class="toolbar">
+    <p class="toolbar-count">@courses.Count cursos cadastrados</p>
+    <button class="btn btn-primary" @onclick="OpenCreate">
+        + Novo Curso
+    </button>
+</div>
+
+<!-- Table -->
+<div class="content-card">
+    @if (loading)
+    {
+        <p class="empty-state">Carregando...</p>
+    }
+    else if (courses.Count == 0)
+    {
+        <p class="empty-state">Nenhum curso encontrado.</p>
+    }
+    else
+    {
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Nível</th>
+                        <th>Duração</th>
+                        <th>Preço</th>
+                        <th>Status</th>
+                        <th class="actions-col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var course in courses)
+                    {
+                        <tr>
+                            <td><strong>@course.Title</strong></td>
+                            <td class="text-truncate" title="@course.Description">@course.Description</td>
+                            <td>@course.Level</td>
+                            <td>@course.DurationWeeks sem.</td>
+                            <td>R$ @course.Price.ToString("F2")</td>
+                            <td>
+                                <span class="badge @(course.IsActive ? "badge-success" : "badge-danger")">
+                                    @(course.IsActive ? "Ativo" : "Inativo")
+                                </span>
+                            </td>
+                            <td class="actions-col">
+                                <button class="btn-icon btn-edit" @onclick="() => OpenEdit(course)" title="Editar">✏️</button>
+                                <button class="btn-icon btn-delete" @onclick="() => ConfirmDelete(course)" title="Excluir">🗑️</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+<!-- Modal -->
+@if (showModal)
+{
+    <div class="modal-backdrop" @onclick="CloseModal">
+        <div class="modal" @onclick:stopPropagation="true">
+            <div class="modal-header">
+                <h3>@(isEditing ? "Editar Curso" : "Novo Curso")</h3>
+                <button class="modal-close" @onclick="CloseModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Título</label>
+                    <input class="form-control" @bind="form.Title" placeholder="Ex: Inglês Básico" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Descrição</label>
+                    <textarea class="form-control form-control-textarea" @bind="form.Description" placeholder="Descrição do curso"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Nível</label>
+                        <select class="form-control" @bind="form.Level">
+                            <option value="">Selecione</option>
+                            <option value="Básico">Básico</option>
+                            <option value="Intermediário">Intermediário</option>
+                            <option value="Avançado">Avançado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Duração (semanas)</label>
+                        <input class="form-control" type="number" @bind="form.DurationWeeks" placeholder="12" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Preço (R$)</label>
+                        <input class="form-control" type="number" step="0.01" @bind="form.Price" placeholder="99.00" />
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" @bind="form.IsActive" /> Curso Ativo
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" @onclick="CloseModal">Cancelar</button>
+                <button class="btn btn-primary" @onclick="Save" disabled="@(saving)">
+                    @(saving ? "Salvando..." : "Salvar")
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Delete Confirmation -->
+@if (showDeleteConfirm)
+{
+    <div class="modal-backdrop" @onclick="() => showDeleteConfirm = false">
+        <div class="modal modal-sm" @onclick:stopPropagation="true">
+            <div class="modal-header">
+                <h3>Confirmar Exclusão</h3>
+                <button class="modal-close" @onclick="() => showDeleteConfirm = false">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja excluir o curso <strong>"@deleteTarget?.Title"</strong>? Esta ação não pode ser desfeita.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" @onclick="() => showDeleteConfirm = false">Cancelar</button>
+                <button class="btn btn-danger" @onclick="Delete">Excluir</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Course> courses = new();
+    private bool loading = true;
+
+    // Modal state
+    private bool showModal;
+    private bool isEditing;
+    private bool saving;
+    private Course form = new();
+    private string? editingId;
+
+    // Delete confirmation
+    private bool showDeleteConfirm;
+    private Course? deleteTarget;
+
+    // Notification
+    private string? notification;
+    private string? notificationType;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadCourses();
+    }
+
+    private async Task LoadCourses()
+    {
+        loading = true;
+        courses = await CourseService.GetAllAsync();
+        loading = false;
+    }
+
+    private void OpenCreate()
+    {
+        isEditing = false;
+        editingId = null;
+        form = new Course { IsActive = true, Price = 99, DurationWeeks = 12 };
+        showModal = true;
+    }
+
+    private void OpenEdit(Course course)
+    {
+        isEditing = true;
+        editingId = course.Id;
+        form = new Course
+        {
+            Id = course.Id,
+            Title = course.Title,
+            Description = course.Description,
+            Level = course.Level,
+            Price = course.Price,
+            DurationWeeks = course.DurationWeeks,
+            IsActive = course.IsActive
+        };
+        showModal = true;
+    }
+
+    private void CloseModal()
+    {
+        showModal = false;
+        form = new();
+    }
+
+    private async Task Save()
+    {
+        if (string.IsNullOrWhiteSpace(form.Title)) return;
+
+        saving = true;
+        (bool success, string? error) result;
+        if (isEditing && !string.IsNullOrEmpty(editingId))
+            result = await CourseService.UpdateAsync(editingId, form);
+        else
+            result = await CourseService.CreateAsync(form);
+
+        saving = false;
+        if (result.success)
+        {
+            notification = isEditing ? "Curso atualizado com sucesso!" : "Curso criado com sucesso!";
+            notificationType = "success";
+            await LoadCourses();
+        }
+        else
+        {
+            notification = $"Erro: {result.error}";
+            notificationType = "error";
+        }
+        CloseModal();
+    }
+
+    private void ConfirmDelete(Course course)
+    {
+        deleteTarget = course;
+        showDeleteConfirm = true;
+    }
+
+    private async Task Delete()
+    {
+        if (deleteTarget == null) return;
+        var result = await CourseService.DeleteAsync(deleteTarget.Id);
+        showDeleteConfirm = false;
+        deleteTarget = null;
+
+        if (result.success)
+        {
+            notification = "Curso excluído com sucesso!";
+            notificationType = "success";
+            await LoadCourses();
+        }
+        else
+        {
+            notification = $"Erro: {result.error}";
+            notificationType = "error";
+        }
+    }
+}

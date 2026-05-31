@@ -14,7 +14,7 @@ import {
 
 const sidebarLinks = [
     { icon: LayoutDashboardIcon, label: "Dashboard", href: "/dashboard" },
-    { icon: BookOpenIcon, label: "Meus Cursos", href: "/dashboard/cursos" },
+    { icon: BookOpenIcon, label: "Meus Cursos", href: "/my-courses" },
     { icon: GraduationCapIcon, label: "Certificados", href: "/dashboard/certificados" },
     { icon: UserIcon, label: "Perfil", href: "/dashboard/perfil" },
     { icon: SettingsIcon, label: "Configurações", href: "/dashboard/configuracoes" },

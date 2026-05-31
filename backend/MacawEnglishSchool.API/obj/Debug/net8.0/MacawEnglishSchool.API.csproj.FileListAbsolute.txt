@@ -38,3 +38,4 @@ C:\Users\marco\Programming\macaw-english-school\backend\MacawEnglishSchool.API\o
 C:\Users\marco\Programming\macaw-english-school\backend\MacawEnglishSchool.API\obj\Debug\net8.0\MacawEnglishSchool.API.genruntimeconfig.cache
 C:\Users\marco\Programming\macaw-english-school\backend\MacawEnglishSchool.API\obj\Debug\net8.0\ref\MacawEnglishSchool.API.dll
 C:\Users\marco\Programming\macaw-english-school\backend\MacawEnglishSchool.API\bin\Debug\net8.0\BCrypt-Net-Next.dll
+C:\Users\marco\Programming\macaw-english-school\backend\MacawEnglishSchool.API\obj\Debug\net8.0\MacawEnglishSchool.API.sourcelink.json
