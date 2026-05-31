@@ -9,7 +9,7 @@ This repository is organized as a monorepo:
 
 - **`/backend`**: .NET 8 Web API providing RESTful services and MongoDB integration.
 - **`/frontend`**: Modern student-facing website built with React and Tailwind CSS.
-- **`/admin`**: Administrative dashboard for school management built with React, TypeScript, and Redux.
+- **`/admin-blazor`**: Administrative dashboard for school management built with Blazor WebAssembly.
 
 ---
 
@@ -30,11 +30,10 @@ This repository is organized as a monorepo:
 - **Navigation**: React Router 7
 
 ### Admin Dashboard
-- **Framework**: React 19 (Vite, TypeScript)
-- **State Management**: Redux Toolkit
-- **Styling**: Tailwind CSS 4
-- **HTTP Client**: Axios
-- **Notifications**: React Toastify
+- **Framework**: Blazor WebAssembly (.NET 8)
+- **Styling**: Bootstrap
+- **Authentication**: Custom Auth State Provider
+- **Routing**: Blazor Router
 
 ---
 
@@ -78,18 +77,18 @@ This repository is organized as a monorepo:
    npm run dev
    ```
 
-### 3. Admin Setup
-1. Navigate to the admin directory:
+### 3. Admin Dashboard Setup
+1. Navigate to the admin-blazor directory:
    ```bash
-   cd admin
+   cd admin-blazor/admin-blazor
    ```
-2. Install dependencies:
+2. Restore dependencies:
    ```bash
-   npm install
+   dotnet restore
    ```
 3. Start the development server:
    ```bash
-   npm run dev
+   dotnet run
    ```
 
 ---

@@ -1,0 +1,21 @@
+# .NET
+[Bb]in/
+[Oo]bj/
+*.user
+*.userosscache
+*.sln.docuser
+*.suo
+*.userprefs
+appsettings.Development.json
+
+# Visual Studio Code
+.vscode/
+
+# Node (Frontend/Admin)
+node_modules/
+dist/
+*.log
+
+# Sensitive Files
+.env
+*.secrets.json
