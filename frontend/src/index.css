@@ -3,6 +3,13 @@
 
 @theme {
     --font-poppins: "Poppins", sans-serif;
+    --color-primary: #456990;
+    --color-primary-dark: #365578;
+    --color-primary-light: #5a83ab;
+    --color-primary-foreground: #D2D7DF;
+    --color-brand-dark: #071013;
+    --color-success: #21FA90;
+    --color-fail: #E01A4F;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

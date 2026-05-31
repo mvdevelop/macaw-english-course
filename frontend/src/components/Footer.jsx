@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-200 dark:border-slate-700 pb-6">
                 <div className="md:max-w-114">
                     <a href="/">
-                        <span className="text-xl font-bold text-purple-600">Macaw English School</span>
+                        <span className="text-xl font-bold text-primary">Macaw English School</span>
                     </a>
                     <p className="mt-6">
                         Aprenda inglês com professores nativos e certificados. Metodologia comprovada com aulas online e presenciais para todos os níveis.
@@ -22,7 +22,7 @@ export default function Footer() {
                         <ul className="space-y-2">
                             {navLinks.map((link, index) => (
                                 <li key={index}>
-                                    <a href={link.href} className="hover:text-purple-600 transition">{link.name}</a>
+                                    <a href={link.href} className="hover:text-primary transition">{link.name}</a>
                                 </li>
                             ))}
                         </ul>

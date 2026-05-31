@@ -12,9 +12,9 @@ export default function Pricing() {
 
             <div className="flex flex-wrap items-center justify-center gap-6 mt-16">
                 {pricingData.map((plan, index) => (
-                    <div key={index} className={`p-6 rounded-2xl max-w-75 w-full shadow-[0px_4px_26px] shadow-black/6 ${plan.mostPopular ? "relative pt-12 bg-gradient-to-b from-indigo-600 to-violet-600" : "bg-white/50 dark:bg-gray-800/50 border border-slate-200 dark:border-slate-800"}`}>
+                    <div key={index} className={`p-6 rounded-2xl max-w-75 w-full shadow-[0px_4px_26px] shadow-black/6 ${plan.mostPopular ? "relative pt-12 bg-gradient-to-b from-primary to-primary-dark" : "bg-white/50 dark:bg-gray-800/50 border border-slate-200 dark:border-slate-800"}`}>
                         {plan.mostPopular && (
-                            <div className="flex items-center text-xs gap-1 py-1.5 px-2 text-purple-600 absolute top-4 right-4 rounded bg-white font-medium">
+                            <div className="flex items-center text-xs gap-1 py-1.5 px-2 text-primary absolute top-4 right-4 rounded bg-white font-medium">
                                 <SparklesIcon size={14} />
                                 <p>Most Popular</p>
                             </div>
@@ -25,12 +25,12 @@ export default function Pricing() {
                         <div className={`space-y-2 ${plan.mostPopular ? "text-white" : "text-slate-600 dark:text-slate-300"}`}>
                             {plan.features.map((feature, index) => (
                                 <div key={index} className="flex items-center gap-1.5">
-                                    <feature.icon size={18} className={`${plan.mostPopular ? "text-white" : "text-purple-600"}`} />
+                                    <feature.icon size={18} className={`${plan.mostPopular ? "text-white" : "text-primary"}`} />
                                     <span>{feature.name}</span>
                                 </div>
                             ))}
                         </div>
-                        <button className={`transition w-full py-3 rounded-lg font-medium mt-8 ${plan.mostPopular ? "bg-white hover:bg-slate-100 text-slate-800" : "bg-purple-600 hover:bg-purple-700 text-white"}`}>
+                        <button className={`transition w-full py-3 rounded-lg font-medium mt-8 ${plan.mostPopular ? "bg-white hover:bg-slate-100 text-slate-800" : "bg-primary hover:bg-primary-dark text-white"}`}>
                             <span>{plan.buttonText}</span>
                         </button>
                     </div>

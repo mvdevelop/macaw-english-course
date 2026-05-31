@@ -29,16 +29,16 @@ export default function Page() {
                 </div>
                 <h1 className="mt-2 text-5xl/15 md:text-[64px]/19 font-semibold max-w-2xl">
                     Domine o{" "}
-                    <span className="bg-gradient-to-r from-[#923FEF] dark:from-[#C99DFF] to-[#C35DE8] dark:to-[#E1C9FF] bg-clip-text text-transparent">inglês</span>
+                    <span className="bg-gradient-to-r from-primary to-primary-light dark:from-primary-light dark:to-primary-foreground bg-clip-text text-transparent">inglês</span>
                 </h1>
                 <p className="text-base dark:text-slate-300 max-w-lg mt-2">
                     Aprenda inglês com professores nativos e certificados. Aulas online e presenciais com metodologia comprovada.
                 </p>
                 <div className="flex items-center gap-4 mt-8">
-                    <button className="bg-purple-600 hover:bg-purple-700 transition text-white rounded-md px-6 h-11">
+                    <button className="bg-primary hover:bg-primary-dark transition text-white rounded-md px-6 h-11">
                         Começar Agora
                     </button>
-                    <button className="flex items-center gap-2 border border-purple-900 transition text-slate-600 dark:text-white rounded-md px-6 h-11">
+                    <button className="flex items-center gap-2 border border-primary-dark transition text-slate-600 dark:text-white rounded-md px-6 h-11">
                         <VideoIcon strokeWidth={1} />
                         <span>Aula Experimental</span>
                     </button>
@@ -60,7 +60,7 @@ export default function Page() {
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-4 mt-10 px-6 md:px-16 lg:px-24 xl:px-32">
                 {featuresData.map((feature, index) => (
                     <div key={index} className="p-6 rounded-xl space-y-3 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/20 max-w-80 md:max-w-66">
-                        <feature.icon className="text-purple-500 size-8 mt-4" strokeWidth={1.3} />
+                        <feature.icon className="text-primary size-8 mt-4" strokeWidth={1.3} />
                         <h3 className="text-base font-medium">{feature.title}</h3>
                         <p className="text-slate-400 line-clamp-2">{feature.description}</p>
                     </div>
@@ -77,10 +77,10 @@ export default function Page() {
                     Junte-se a milhares de alunos que já transformaram sua vida aprendendo inglês com a Macaw.
                 </p>
                 <div className="flex items-center gap-4 mt-8">
-                    <button className="bg-purple-600 hover:bg-purple-700 transition text-white rounded-md px-6 h-11">
+                    <button className="bg-primary hover:bg-primary-dark transition text-white rounded-md px-6 h-11">
                         Iniciar Aula Experimental
                     </button>
-                    <button className="border border-purple-900 transition text-slate-600 dark:text-white rounded-md px-6 h-11">
+                    <button className="border border-primary-dark transition text-slate-600 dark:text-white rounded-md px-6 h-11">
                         Falar com Consultor
                     </button>
                 </div>

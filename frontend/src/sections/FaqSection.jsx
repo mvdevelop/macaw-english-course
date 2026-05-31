@@ -13,7 +13,7 @@ export const FaqSection = () => {
             <SectionTitle text1="FAQ's" text2="Frequently asked questions" text3="Ship Beautiful Frontends Without the Overhead — Customizable, Scalable, and Developer-Friendly UI Components." />
             <div className="mt-8">
                 {faqsData.map((faq, index) => (
-                    <div className="border-b border-slate-300 dark:border-purple-900 py-4 cursor-pointer w-full" key={index} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
+                    <div className="border-b border-slate-300 dark:border-primary/30 py-4 cursor-pointer w-full" key={index} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                         <div className="flex items-center justify-between">
                             <h3 className="text-base font-medium">
                                 {faq.question}
