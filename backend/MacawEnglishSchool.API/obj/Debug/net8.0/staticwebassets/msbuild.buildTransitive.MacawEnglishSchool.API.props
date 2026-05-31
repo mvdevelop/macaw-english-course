@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\MacawEnglishSchool.API.props" />
+</Project>
