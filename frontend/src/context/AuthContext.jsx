@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
-const API_URL = "http://localhost:5196/api/auth";
+const API_URL = "https://macaw-english-course.onrender.com/api/auth";
 
 export const AuthContext = createContext();
 

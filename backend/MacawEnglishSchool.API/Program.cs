@@ -52,6 +52,15 @@ app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+
+// Welcome route
+app.MapGet("/", () => Results.Ok(new
+{
+    message = "Welcome to Macaw English School API!",
+    version = "1.0.0",
+    status = "running"
+}));
+
 app.MapControllers();
 
 app.Run();

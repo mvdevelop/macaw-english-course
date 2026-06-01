@@ -1,4 +1,4 @@
-const API = "http://localhost:5196/api";
+const API = "https://macaw-english-course.onrender.com/api";
 
 export async function getLessonsByLevel(levelCode) {
     const res = await fetch(`${API}/lessons/level/${levelCode}`);
