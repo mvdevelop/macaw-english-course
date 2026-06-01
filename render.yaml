@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: macaw-english-school-api
+    env: docker
+    region: oregon
+    plan: free
+    envVars:
+      - key: MongoDb__ConnectionString
+        sync: false
+      - key: MongoDb__DatabaseName
+        value: macaw_english_school
+      - key: ASPNETCORE_URLS
+        value: http://+:8080
+    docker:
+      context: ./backend/MacawEnglishSchool.API
+      dockerfilePath: ./backend/MacawEnglishSchool.API/Dockerfile

@@ -1,0 +1,694 @@
+{
+  "lessons": [
+    {
+      "levelCode": "A1",
+      "moduleId": "m1",
+      "moduleTitle": "Module 1: Greetings & Introductions",
+      "title": "Lesson 1: Hello! — Greetings",
+      "order": 1,
+      "description": "Learn basic greetings in English: hello, good morning, good afternoon, good evening, and good night.",
+      "estimatedMinutes": 30,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "Welcome to your first English lesson! 🎉\n\nIn English, we greet people differently depending on the time of day. Let's learn the most common greetings:\n\n• **Good morning** — used from sunrise until 12:00 PM\n• **Good afternoon** — used from 12:00 PM until around 5:00 PM\n• **Good evening** — used from around 5:00 PM onwards\n• **Good night** — used when saying goodbye at night or going to sleep\n• **Hello / Hi** — used at any time (informal: Hi)\n\nTip: \"Hi\" is more casual and is used with friends and family. \"Hello\" works in any situation."
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "A Simple Conversation",
+          "body": "Read the dialogue below:\n\n**Teacher:** Good morning, class!\n**Students:** Good morning, teacher!\n**Teacher:** My name is Sarah. What is your name?\n**Student:** Hello, my name is Carlos.\n**Teacher:** Nice to meet you, Carlos.\n**Student:** Nice to meet you too!\n\nNotice how the teacher uses \"Good morning\" because it's the beginning of the day. Carlos responds with \"Hello,\" which is friendly and natural. Both \"Nice to meet you\" and \"Nice to meet you too\" are very common expressions when you meet someone for the first time."
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "Which greeting is used before 12:00 PM?",
+          "options": ["Good afternoon", "Good evening", "Good morning", "Good night"],
+          "correctAnswer": "2",
+          "explanation": "\"Good morning\" is used from sunrise until 12:00 PM.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "multiple-choice",
+          "question": "\"Hi\" is more ___ than \"Hello.\"",
+          "options": ["formal", "casual", "serious", "angry"],
+          "correctAnswer": "1",
+          "explanation": "\"Hi\" is a casual/informal way to greet someone.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 3,
+          "type": "multiple-choice",
+          "question": "When do you say \"Good evening\"?",
+          "options": ["At 8:00 AM", "At 12:00 PM", "At 7:00 PM", "At midnight"],
+          "correctAnswer": "2",
+          "explanation": "\"Good evening\" is used from around 5:00 PM onwards.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 4,
+          "type": "fill-blank",
+          "question": "Complete: \"Nice to ___ you too!\"",
+          "options": [],
+          "correctAnswer": "meet",
+          "explanation": "The expression is \"Nice to meet you too.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "multiple-choice",
+          "question": "What does the teacher say at the beginning of class?",
+          "options": ["Good night, class!", "Good evening, class!", "Good morning, class!", "Goodbye, class!"],
+          "correctAnswer": "2",
+          "explanation": "At the beginning of the school day, the teacher says \"Good morning, class!\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 6,
+          "type": "fill-blank",
+          "question": "My ___ is Carlos.",
+          "options": [],
+          "correctAnswer": "name",
+          "explanation": "\"My name is Carlos\" — used to introduce yourself.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "multiple-choice",
+          "question": "Which is correct?",
+          "options": ["Good night — used at 9 AM", "Good afternoon — used at 3 PM", "Good morning — used at 6 PM", "Good evening — used at noon"],
+          "correctAnswer": "1",
+          "explanation": "Good afternoon is used from 12:00 PM until around 5:00 PM. 3 PM falls in this range.",
+          "difficulty": "medium"
+        },
+        {
+          "order": 8,
+          "type": "fill-blank",
+          "question": "When going to sleep, you say: Good ___.",
+          "options": [],
+          "correctAnswer": "night",
+          "explanation": "\"Good night\" is used when saying goodbye at night or going to sleep.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 9,
+          "type": "multiple-choice",
+          "question": "Sarah says \"___ to meet you, Carlos.\"",
+          "options": ["Happy", "Nice", "Good", "Fine"],
+          "correctAnswer": "1",
+          "explanation": "The correct expression is \"Nice to meet you.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 10,
+          "type": "fill-blank",
+          "question": "\"Hello\" works in ___ situation — formal or informal.",
+          "options": [],
+          "correctAnswer": "any",
+          "explanation": "\"Hello\" is universal — it works in any situation.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "levelCode": "A1",
+      "moduleId": "m1",
+      "moduleTitle": "Module 1: Greetings & Introductions",
+      "title": "Lesson 2: My Name Is... — Introductions",
+      "order": 2,
+      "description": "Learn how to introduce yourself and ask someone's name in English.",
+      "estimatedMinutes": 30,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "Introducing yourself is one of the first things you learn in English. Here are the key phrases:\n\n• **My name is...** — to tell someone your name\n• **I'm...** — shorter and more natural way to say your name\n• **What is your name?** — to ask someone's name\n• **Nice to meet you** — polite response after learning someone's name\n• **Where are you from?** — to ask about someone's country or city\n• **I'm from...** — to answer where you are from\n\nExamples:\n• \"Hi, I'm Ana. Nice to meet you!\"\n• \"Hello, my name is Pedro. I'm from Brazil.\"\n• \"What's your name?\" (shortened form of \"What is your name?\")"
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "At a Party",
+          "body": "Read the dialogue between two people meeting for the first time:\n\n**Tom:** Hi! I'm Tom. What's your name?\n**Ana:** Hello, Tom! I'm Ana. Nice to meet you.\n**Tom:** Nice to meet you too! Where are you from, Ana?\n**Ana:** I'm from São Paulo, Brazil. And you?\n**Tom:** I'm from London, England.\n**Ana:** Oh, wonderful! Welcome to Brazil!\n\nNotice how Tom and Ana use short, natural phrases. \"What's\" and \"I'm\" are contractions — they make your English sound more natural."
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "Which is the most natural way to introduce yourself?",
+          "options": ["My name is called John", "I'm John", "I am to be John", "John is me"],
+          "correctAnswer": "1",
+          "explanation": "\"I'm John\" is the most natural and common way.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "fill-blank",
+          "question": "\"What ___ your name?\"",
+          "options": [],
+          "correctAnswer": "is",
+          "explanation": "\"What is your name?\" — or shortened: \"What's your name?\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 3,
+          "type": "multiple-choice",
+          "question": "What does \"Where are you from?\" ask about?",
+          "options": ["Your job", "Your country or city", "Your age", "Your name"],
+          "correctAnswer": "1",
+          "explanation": "\"Where are you from?\" asks about your country or city.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 4,
+          "type": "fill-blank",
+          "question": "\"I'm ___ São Paulo, Brazil.\"",
+          "options": [],
+          "correctAnswer": "from",
+          "explanation": "\"I'm from...\" is used to say where you are from.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "multiple-choice",
+          "question": "\"What's\" is the shortened form of:",
+          "options": ["What has", "What is", "What was", "What does"],
+          "correctAnswer": "1",
+          "explanation": "\"What's\" = \"What is\" — this is called a contraction.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 6,
+          "type": "fill-blank",
+          "question": "\"Nice to ___ you too!\"",
+          "options": [],
+          "correctAnswer": "meet",
+          "explanation": "\"Nice to meet you too\" — the standard polite response.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "multiple-choice",
+          "question": "Ana says \"I'm from São Paulo.\" Tom is from:",
+          "options": ["New York", "Paris", "London", "Tokyo"],
+          "correctAnswer": "2",
+          "explanation": "Tom says \"I'm from London, England.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 8,
+          "type": "fill-blank",
+          "question": "\"Hi! I'm Tom. What's ___ name?\"",
+          "options": [],
+          "correctAnswer": "your",
+          "explanation": "\"What's your name?\" — used to ask someone's name.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 9,
+          "type": "multiple-choice",
+          "question": "Which contraction is correct?",
+          "options": ["I'm = I am", "I'm = I have", "I'm = I will", "I'm = I was"],
+          "correctAnswer": "0",
+          "explanation": "\"I'm\" = \"I am\" — this is the most common contraction in English.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 10,
+          "type": "fill-blank",
+          "question": "\"Hello, my ___ is Pedro.\"",
+          "options": [],
+          "correctAnswer": "name",
+          "explanation": "\"My name is Pedro\" — a formal way to introduce yourself.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "levelCode": "A1",
+      "moduleId": "m1",
+      "moduleTitle": "Module 1: Greetings & Introductions",
+      "title": "Lesson 3: How Are You? — Feelings & Responses",
+      "order": 3,
+      "description": "Learn how to ask how someone is and respond about your feelings.",
+      "estimatedMinutes": 30,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "After greeting someone, the next question is usually \"How are you?\" Here's how to answer:\n\n**Positive responses:**\n• I'm fine, thank you.\n• I'm good! / I'm great!\n• I'm very well, thanks.\n• Pretty good!\n\n**Neutral responses:**\n• I'm OK.\n• Not bad.\n• So-so.\n\n**Negative responses:**\n• I'm not so good.\n• I'm tired.\n• I'm a little sad.\n\nTo ask someone back:\n• \"And you?\" — short and natural\n• \"How about you?\" — also very common\n\nRemember: In English-speaking cultures, \"How are you?\" is often just a polite greeting. People usually answer positively even if they're not feeling great."
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "At the Office",
+          "body": "Read the conversation between two coworkers:\n\n**Maria:** Good morning, John! How are you?\n**John:** Hi, Maria! I'm great, thank you. And you?\n**Maria:** I'm fine, thanks. Did you have a good weekend?\n**John:** Yes, I did! I went to the park with my family.\n**Maria:** That's nice! Have a great day!\n**John:** You too! See you later!\n\nNotice how Maria and John exchange polite greetings and positive responses. This is very common in everyday English conversations."
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "Which is a positive response to \"How are you?\"",
+          "options": ["I'm tired", "I'm great!", "I'm so-so", "Not bad"],
+          "correctAnswer": "1",
+          "explanation": "\"I'm great!\" is a positive and enthusiastic response.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "fill-blank",
+          "question": "\"I'm fine, ___ you.\"",
+          "options": [],
+          "correctAnswer": "thank",
+          "explanation": "\"I'm fine, thank you.\" — the classic polite response.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 3,
+          "type": "multiple-choice",
+          "question": "\"And you?\" is used to:",
+          "options": ["Ask someone's name", "Ask someone back about their feelings", "Say goodbye", "Thank someone"],
+          "correctAnswer": "1",
+          "explanation": "\"And you?\" asks the other person the same question back.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 4,
+          "type": "multiple-choice",
+          "question": "\"Not bad\" is a ___ response.",
+          "options": ["positive", "negative", "neutral", "angry"],
+          "correctAnswer": "2",
+          "explanation": "\"Not bad\" means you're doing okay — neither great nor terrible.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "fill-blank",
+          "question": "\"How ___ you?\"",
+          "options": [],
+          "correctAnswer": "are",
+          "explanation": "\"How are you?\" — the standard question.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 6,
+          "type": "multiple-choice",
+          "question": "John went to the ___ with his family.",
+          "options": ["school", "park", "hospital", "airport"],
+          "correctAnswer": "1",
+          "explanation": "John says \"I went to the park with my family.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "fill-blank",
+          "question": "\"I'm very ___, thanks.\"",
+          "options": [],
+          "correctAnswer": "well",
+          "explanation": "\"I'm very well, thanks\" — a formal and polite response.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 8,
+          "type": "multiple-choice",
+          "question": "In English-speaking cultures, \"How are you?\" is often:",
+          "options": ["A serious question", "A polite greeting", "An angry statement", "A joke"],
+          "correctAnswer": "1",
+          "explanation": "It's often just a polite greeting, not a deep question.",
+          "difficulty": "medium"
+        },
+        {
+          "order": 9,
+          "type": "fill-blank",
+          "question": "\"How ___ you?\" — \"How about you?\"",
+          "options": [],
+          "correctAnswer": "about",
+          "explanation": "\"How about you?\" — another way to ask the question back.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 10,
+          "type": "multiple-choice",
+          "question": "Maria says \"Have a great ___!\"",
+          "options": ["night", "weekend", "day", "week"],
+          "correctAnswer": "2",
+          "explanation": "\"Have a great day!\" — a common way to wish someone well.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "levelCode": "A1",
+      "moduleId": "m1",
+      "moduleTitle": "Module 1: Greetings & Introductions",
+      "title": "Lesson 4: The Alphabet & Spelling",
+      "order": 4,
+      "description": "Learn the English alphabet and how to spell your name.",
+      "estimatedMinutes": 35,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "The English alphabet has 26 letters. Here they are:\n\nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z\n\nSome letters have similar sounds to Portuguese, but others are different:\n\n• **A** (ei) — like the letter \"A\" in English\n• **E** (ii) — sounds like \"ee\" in Portuguese\n• **I** (ai) — sounds like \"eye\"\n• **J** (djei) — very different from Portuguese \"jota\"\n• **G** (dji) — sounds like \"jee\" in English\n• **H** (eitch) — the silent letter in English words\n• **R** (ar) — pronounced very differently from Portuguese\n• **W** (dábliu) — two U's together\n• **Y** (uai) — sounds like \"why\"\n\nWhen spelling your name, it's common to use the NATO phonetic alphabet in formal situations:\nA = Alpha, B = Bravo, C = Charlie, D = Delta..."
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "Spelling Practice",
+          "body": "Read the conversation at a reception desk:\n\n**Receptionist:** Good morning! Can I have your name, please?\n**Client:** Yes, my name is Sarah.\n**Receptionist:** How do you spell that?\n**Client:** S-A-R-A-H.\n**Receptionist:** Thank you, Sarah. And your email?\n**Client:** s-a-r-a-h at gmail dot com.\n**Receptionist:** Perfect! Got it.\n\nNotice how the client spells each letter slowly and clearly. When saying email addresses, we use:\n• \"at\" for @\n• \"dot\" for ."
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "How many letters are in the English alphabet?",
+          "options": ["24", "25", "26", "28"],
+          "correctAnswer": "2",
+          "explanation": "The English alphabet has 26 letters.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "multiple-choice",
+          "question": "How is the letter 'J' pronounced in English?",
+          "options": ["Jota", "Djei", "Zhê", "Gee"],
+          "correctAnswer": "1",
+          "explanation": "\"J\" is pronounced \"djei\" in English — very different from Portuguese \"jota.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 3,
+          "type": "fill-blank",
+          "question": "In emails, we say \"___\" for the @ symbol.",
+          "options": [],
+          "correctAnswer": "at",
+          "explanation": "We say \"at\" for the @ symbol in email addresses.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 4,
+          "type": "fill-blank",
+          "question": "For the period (.) in emails, we say \"___.\"",
+          "options": [],
+          "correctAnswer": "dot",
+          "explanation": "We say \"dot\" for the period in email addresses.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "multiple-choice",
+          "question": "What does the receptionist ask to confirm the spelling?",
+          "options": ["What is your name?", "How do you spell that?", "Say it again", "Write it down"],
+          "correctAnswer": "1",
+          "explanation": "\"How do you spell that?\" — the standard question to confirm spelling.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 6,
+          "type": "multiple-choice",
+          "question": "The letter 'W' is pronounced:",
+          "options": ["Double-u", "Dábliu", "Vee", "Wuh"],
+          "correctAnswer": "1",
+          "explanation": "In English, W is pronounced \"dábliu\" (double-u).",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "fill-blank",
+          "question": "\"S-___-R-A-H\" — Sarah's second letter.",
+          "options": [],
+          "correctAnswer": "a",
+          "explanation": "Sarah is spelled S-A-R-A-H.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 8,
+          "type": "multiple-choice",
+          "question": "Which letter is silent in many English words?",
+          "options": ["B", "K", "H", "Z"],
+          "correctAnswer": "2",
+          "explanation": "The letter H is silent in many English words (hour, honest, etc.).",
+          "difficulty": "medium"
+        },
+        {
+          "order": 9,
+          "type": "multiple-choice",
+          "question": "\"Can I have your name, please?\" means:",
+          "options": ["What's your age?", "Tell me your name politely", "Where are you from?", "How are you?"],
+          "correctAnswer": "1",
+          "explanation": "It's a polite way of asking someone's name.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 10,
+          "type": "fill-blank",
+          "question": "\"Perfect! ___ it.\" — the receptionist confirms.",
+          "options": [],
+          "correctAnswer": "Got",
+          "explanation": "\"Got it\" — a common way to say you understood or received information.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "levelCode": "A1",
+      "moduleId": "m1",
+      "moduleTitle": "Module 1: Greetings & Introductions",
+      "title": "Lesson 5: Numbers 1-100",
+      "order": 5,
+      "description": "Learn to count from 1 to 100 in English.",
+      "estimatedMinutes": 35,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "Numbers are essential in English. Let's start with 1 to 20:\n\n1 - one | 2 - two | 3 - three | 4 - four | 5 - five\n6 - six | 7 - seven | 8 - eight | 9 - nine | 10 - ten\n11 - eleven | 12 - twelve | 13 - thirteen | 14 - fourteen | 15 - fifteen\n16 - sixteen | 17 - seventeen | 18 - eighteen | 19 - nineteen | 20 - twenty\n\nThen by tens:\n30 - thirty | 40 - forty (no 'u'!) | 50 - fifty\n60 - sixty | 70 - seventy | 80 - eighty | 90 - ninety | 100 - one hundred\n\nTo say numbers between tens, combine them:\n• 21 = twenty-one\n• 35 = thirty-five\n• 47 = forty-seven\n• 99 = ninety-nine\n\nTip: Numbers from 13 to 19 all end in \"-teen.\" Numbers in tens (30, 40, 50...) end in \"-ty.\" This difference is very important!"
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "At the Store",
+          "body": "Read the conversation:\n\n**Cashier:** That will be forty-five dollars, please.\n**Customer:** Here you go — fifty dollars.\n**Cashier:** Thank you. Your change is five dollars.\n**Customer:** Great, thank you!\n\nNotice the numbers: 45 (forty-five), 50 (fifty), and 5 (five). Being able to understand numbers helps you in everyday situations like shopping."
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "How do you say 13 in English?",
+          "options": ["Thirty", "Thirteen", "Three", "Third"],
+          "correctAnswer": "1",
+          "explanation": "13 = thirteen (ends in -teen). 30 = thirty (ends in -ty).",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "fill-blank",
+          "question": "40 in English is spelled \"forty\" — there is no letter '___'.",
+          "options": [],
+          "correctAnswer": "u",
+          "explanation": "Unlike \"four,\" the number 40 is spelled \"forty\" (without 'u').",
+          "difficulty": "medium"
+        },
+        {
+          "order": 3,
+          "type": "multiple-choice",
+          "question": "What number is \"seventy-two\"?",
+          "options": ["17", "27", "72", "702"],
+          "correctAnswer": "2",
+          "explanation": "Seventy-two = 72.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 4,
+          "type": "fill-blank",
+          "question": "100 in English: one ___.",
+          "options": [],
+          "correctAnswer": "hundred",
+          "explanation": "100 = one hundred.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "multiple-choice",
+          "question": "The customer gives $50 for a $45 item. The change is:",
+          "options": ["$15", "$10", "$5", "$50"],
+          "correctAnswer": "2",
+          "explanation": "$50 - $45 = $5 change.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 6,
+          "type": "fill-blank",
+          "question": "Numbers from 13 to 19 end in \"-___.\"",
+          "options": [],
+          "correctAnswer": "teen",
+          "explanation": "13 = thirteen, 14 = fourteen... all end in -teen.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "multiple-choice",
+          "question": "Which is correct?",
+          "options": ["fourty", "forty", "fourty", "forly"],
+          "correctAnswer": "1",
+          "explanation": "40 is spelled \"forty\" — no 'u' after 'r'.",
+          "difficulty": "medium"
+        },
+        {
+          "order": 8,
+          "type": "fill-blank",
+          "question": "21 = twenty-___.",
+          "options": [],
+          "correctAnswer": "one",
+          "explanation": "21 = twenty-one — combine the tens and units.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 9,
+          "type": "multiple-choice",
+          "question": "How do you say 80?",
+          "options": ["Eighteen", "Eighty", "Eight", "Eighth"],
+          "correctAnswer": "1",
+          "explanation": "80 = eighty (ends in -ty). 18 = eighteen (ends in -teen).",
+          "difficulty": "easy"
+        },
+        {
+          "order": 10,
+          "type": "fill-blank",
+          "question": "99 = ninety-___.",
+          "options": [],
+          "correctAnswer": "nine",
+          "explanation": "99 = ninety-nine — the highest two-digit number.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "levelCode": "A1",
+      "moduleId": "m1",
+      "moduleTitle": "Module 1: Greetings & Introductions",
+      "title": "Lesson 6: Countries & Nationalities",
+      "order": 6,
+      "description": "Learn to say where you're from and nationalities in English.",
+      "estimatedMinutes": 35,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "Talking about where you're from is a very common topic in conversations. Here are the patterns:\n\n**Countries → Nationalities:**\n• Brazil → Brazilian\n• United States → American\n• England → English / British\n• France → French\n• Japan → Japanese\n• China → Chinese\n• Germany → German\n• Italy → Italian\n• Portugal → Portuguese\n• Mexico → Mexican\n\n**How to use:**\n• \"I'm from Brazil.\" (country)\n• \"I'm Brazilian.\" (nationality)\n• \"Where are you from?\" — answer: \"I'm from...\"\n• \"What's your nationality?\" — answer: \"I'm...\"\n\nNotice that nationalities often have suffixes:\n• -ian: Brazilian, Italian, Mexican\n• -ish: English, British\n• -ese: Japanese, Chinese, Portuguese\n• -er: American (irregular!)"
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "International Class",
+          "body": "Read the conversation in an English class with students from different countries:\n\n**Teacher:** Good morning, everyone! Let's introduce ourselves. Where are you from?\n**Yuki:** I'm from Tokyo, Japan. I'm Japanese.\n**Teacher:** Welcome, Yuki! And you, Marco?\n**Marco:** I'm from Rome, Italy. I'm Italian.\n**Teacher:** Wonderful! Anna, what about you?\n**Anna:** I'm from São Paulo, Brazil. I'm Brazilian.\n**Teacher:** Great! We have students from three different continents in this class!\n\nNotice how each student states their city, country, and nationality. This is a natural way to share this information."
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "If you're from Brazil, you are:",
+          "options": ["Brazilian", "Brasilian", "Braziler", "Brazilo"],
+          "correctAnswer": "0",
+          "explanation": "Brazilian — with suffix -ian.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "fill-blank",
+          "question": "If you're from Japan, you are Japan___.",
+          "options": [],
+          "correctAnswer": "ese",
+          "explanation": "Japanese — with suffix -ese.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 3,
+          "type": "multiple-choice",
+          "question": "Marco is from Rome. He is:",
+          "options": ["Roman", "Italian", "Italiano", "Romer"],
+          "correctAnswer": "1",
+          "explanation": "Marco says \"I'm Italian\" — the nationality of Italy.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 4,
+          "type": "fill-blank",
+          "question": "\"I'm from São Paulo, ___.\" (country)",
+          "options": [],
+          "correctAnswer": "Brazil",
+          "explanation": "\"I'm from São Paulo, Brazil.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "multiple-choice",
+          "question": "Which nationality uses the suffix \"-ish\"?",
+          "options": ["Brazilian", "Italian", "English", "Japanese"],
+          "correctAnswer": "2",
+          "explanation": "English uses the suffix -ish (also British, Spanish, etc.).",
+          "difficulty": "medium"
+        },
+        {
+          "order": 6,
+          "type": "fill-blank",
+          "question": "Someone from Germany is Ger___.",
+          "options": [],
+          "correctAnswer": "man",
+          "explanation": "German — with suffix -an.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "multiple-choice",
+          "question": "\"Where are you from?\" asks about:",
+          "options": ["Your job", "Your age", "Your country or city", "Your name"],
+          "correctAnswer": "2",
+          "explanation": "\"Where are you from?\" asks about your country or city.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 8,
+          "type": "fill-blank",
+          "question": "Someone from France is ___.",
+          "options": [],
+          "correctAnswer": "French",
+          "explanation": "French — irregular form (not \"Franch\" or \"Francean\").",
+          "difficulty": "medium"
+        },
+        {
+          "order": 9,
+          "type": "multiple-choice",
+          "question": "Yuki is from Tokyo. Tokyo is in:",
+          "options": ["China", "Japan", "Korea", "Thailand"],
+          "correctAnswer": "1",
+          "explanation": "Yuki says \"I'm from Tokyo, Japan.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 10,
+          "type": "fill-blank",
+          "question": "Someone from the United States is A___.",
+          "options": [],
+          "correctAnswer": "merican",
+          "explanation": "American — with suffix -an.",
+          "difficulty": "easy"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { BookOpenIcon, TrendingUpIcon, TrophyIcon } from "lucide-react";
+import { ArrowLeftIcon, BookOpenIcon, TrendingUpIcon, TrophyIcon } from "lucide-react";
 
 const LEVELS = [
     { code: "a1", label: "A1", name: "Beginner", color: "from-green-400 to-green-600", desc: "Cumprimentos, números, frases básicas" },
@@ -16,6 +16,12 @@ export default function MyCourses() {
     return (
         <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-brand-dark">
             <div className="flex-1 p-6 lg:p-10 max-w-5xl mx-auto w-full">
+                <button
+                    onClick={() => navigate("/")}
+                    className="flex items-center gap-2 text-sm text-slate-400 hover:text-primary mb-6 transition"
+                >
+                    <ArrowLeftIcon size={16} /> Voltar ao início
+                </button>
                 <div className="mb-8">
                     <h1 className="text-2xl font-semibold">Meus Cursos</h1>
                     <p className="text-slate-400 mt-1">Escolha seu nível e comece a aprender.</p>

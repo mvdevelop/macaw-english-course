@@ -24,6 +24,7 @@ builder.Services.AddScoped<ILessonRepository, LessonRepository>();
 builder.Services.AddScoped<IModuleTestRepository, ModuleTestRepository>();
 builder.Services.AddScoped<ITestResultRepository, TestResultRepository>();
 builder.Services.AddScoped<IProgressRepository, ProgressRepository>();
+builder.Services.AddScoped<SeedService>();
 
 // Add CORS
 builder.Services.AddCors(options =>

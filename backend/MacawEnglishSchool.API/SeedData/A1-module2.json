@@ -1,0 +1,694 @@
+{
+  "lessons": [
+    {
+      "levelCode": "A1",
+      "moduleId": "m2",
+      "moduleTitle": "Module 2: Daily Routine",
+      "title": "Lesson 7: Wake Up! — Morning Routine",
+      "order": 1,
+      "description": "Learn vocabulary for your morning routine using the present simple tense.",
+      "estimatedMinutes": 35,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "Let's talk about your morning routine! We use the **Present Simple** tense to describe habits and routines.\n\n**Common morning verbs:**\n• wake up — I wake up at 7 AM\n• get up — I get up at 7:15\n• take a shower — I take a shower\n• brush my teeth — I brush my teeth\n• get dressed — I get dressed\n• have breakfast — I have breakfast at 7:45\n• leave home — I leave home at 8:00\n• go to work / school — I go to work at 8:30\n\n**Time expressions:**\n• at 7 o'clock\n• in the morning\n• every day\n• usually / always / sometimes\n\nExample: \"I usually wake up at 7 o'clock. I always have breakfast before I go to work.\""
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "Carlos's Morning",
+          "body": "Read about Carlos's daily routine:\n\n\"I wake up at 6:30 every day. First, I turn off my alarm and get up. I take a shower and get dressed. Then I have breakfast — usually coffee and toast. I leave home at 7:30 and take the bus to work. I arrive at the office at 8:00. My work starts at 8:30.\"\n\nNotice the Present Simple tense: wake, turn off, get up, take, have, leave, arrive, starts. These are all habits that happen every day."
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "Which tense do we use for daily routines?",
+          "options": ["Past Simple", "Present Simple", "Future Simple", "Present Continuous"],
+          "correctAnswer": "1",
+          "explanation": "Present Simple is used for habits and routines.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "fill-blank",
+          "question": "I wake ___ at 6:30 every day.",
+          "options": [],
+          "correctAnswer": "up",
+          "explanation": "\"Wake up\" — to stop sleeping.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 3,
+          "type": "multiple-choice",
+          "question": "\"I ___ a shower\" — which verb?",
+          "options": ["do", "make", "take", "have"],
+          "correctAnswer": "2",
+          "explanation": "\"Take a shower\" — the correct collocation in English.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 4,
+          "type": "fill-blank",
+          "question": "I ___ breakfast at 7:45.",
+          "options": [],
+          "correctAnswer": "have",
+          "explanation": "\"Have breakfast\" — we use \"have\" for meals in English.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "multiple-choice",
+          "question": "Carlos arrives at the office at:",
+          "options": ["7:30", "8:00", "8:30", "9:00"],
+          "correctAnswer": "1",
+          "explanation": "Carlos arrives at the office at 8:00. His work starts at 8:30.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 6,
+          "type": "fill-blank",
+          "question": "I ___ home at 7:30 and take the bus.",
+          "options": [],
+          "correctAnswer": "leave",
+          "explanation": "\"Leave home\" — to exit your house.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "multiple-choice",
+          "question": "Which is a time expression?",
+          "options": ["at 7 o'clock", "in the house", "on the table", "with friends"],
+          "correctAnswer": "0",
+          "explanation": "\"At 7 o'clock\" tells us the time.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 8,
+          "type": "fill-blank",
+          "question": "I ___ my teeth every morning.",
+          "options": [],
+          "correctAnswer": "brush",
+          "explanation": "\"Brush my teeth\" — the correct verb.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 9,
+          "type": "multiple-choice",
+          "question": "Carlos takes the ___ to work.",
+          "options": ["train", "car", "bus", "bike"],
+          "correctAnswer": "2",
+          "explanation": "Carlos says \"I take the bus to work.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 10,
+          "type": "fill-blank",
+          "question": "\"I ___ get dressed after my shower.\"",
+          "options": [],
+          "correctAnswer": "then",
+          "explanation": "\"Then\" shows the next step in a sequence.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "levelCode": "A1",
+      "moduleId": "m2",
+      "moduleTitle": "Module 2: Daily Routine",
+      "title": "Lesson 8: Telling Time",
+      "order": 2,
+      "description": "Learn to tell and understand time in English.",
+      "estimatedMinutes": 30,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "Telling time is essential for everyday life. Here's how it works:\n\n**Basic format:**\n• 7:00 → seven o'clock\n• 7:15 → seven fifteen / a quarter past seven\n• 7:30 → seven thirty / half past seven\n• 7:45 → seven forty-five / a quarter to eight\n• 8:00 → eight o'clock\n\n**Using 'past' and 'to':**\n• 1-30 minutes: use \"past\" → 3:10 = ten past three\n• 31-59 minutes: use \"to\" → 3:50 = ten to four\n\n**Time of day:**\n• a.m. = morning (12:00 AM = midnight, 6 AM = early morning)\n• p.m. = afternoon/evening (12:00 PM = noon, 6 PM = evening)\n\n**Asking for time:**\n• \"What time is it?\"\n• \"Do you have the time?\"\n• \"What time does the class start?\""
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "A Busy Schedule",
+          "body": "Read about Maria's daily schedule:\n\n\"My alarm goes off at 6:00 AM. I start work at 8:30 AM. I have lunch at 12:00 PM (noon). I finish work at 5:00 PM. I have dinner at 7:30 PM. I go to bed at 11:00 PM.\"\n\nNotice the use of AM and PM. In many English-speaking countries, people use the 12-hour clock in daily conversation rather than the 24-hour clock."
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "\"A quarter past three\" means:",
+          "options": ["3:00", "3:15", "3:30", "3:45"],
+          "correctAnswer": "1",
+          "explanation": "A quarter = 15 minutes. \"Past\" means after. So 3:15.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "fill-blank",
+          "question": "7:30 can be \"seven thirty\" or \"half ___ seven.\"",
+          "options": [],
+          "correctAnswer": "past",
+          "explanation": "\"Half past seven\" = 7:30.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 3,
+          "type": "multiple-choice",
+          "question": "\"Ten to four\" means:",
+          "options": ["4:10", "3:50", "4:50", "3:10"],
+          "correctAnswer": "1",
+          "explanation": "\"To\" means before. 10 minutes before 4:00 = 3:50.",
+          "difficulty": "medium"
+        },
+        {
+          "order": 4,
+          "type": "fill-blank",
+          "question": "12:00 PM is ___.",
+          "options": [],
+          "correctAnswer": "noon",
+          "explanation": "12:00 PM = noon / midday. 12:00 AM = midnight.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "multiple-choice",
+          "question": "What time does Maria start work?",
+          "options": ["6:00 AM", "7:30 AM", "8:30 AM", "9:00 AM"],
+          "correctAnswer": "2",
+          "explanation": "Maria starts work at 8:30 AM.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 6,
+          "type": "fill-blank",
+          "question": "\"What time ___ it?\" — asking for the time.",
+          "options": [],
+          "correctAnswer": "is",
+          "explanation": "\"What time is it?\" — the standard question.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "multiple-choice",
+          "question": "7:45 can also be said as:",
+          "options": ["A quarter past seven", "A quarter to eight", "Half past seven", "Seven and forty-five"],
+          "correctAnswer": "1",
+          "explanation": "7:45 = a quarter to eight (15 minutes before 8:00).",
+          "difficulty": "medium"
+        },
+        {
+          "order": 8,
+          "type": "fill-blank",
+          "question": "I go to bed at 11:00 ___ (at night).",
+          "options": [],
+          "correctAnswer": "PM",
+          "explanation": "PM is used for afternoon, evening, and night.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 9,
+          "type": "multiple-choice",
+          "question": "Maria has lunch at:",
+          "options": ["11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM"],
+          "correctAnswer": "1",
+          "explanation": "Maria has lunch at 12:00 PM (noon).",
+          "difficulty": "easy"
+        },
+        {
+          "order": 10,
+          "type": "fill-blank",
+          "question": "6:00 AM = six ___ the clock.",
+          "options": [],
+          "correctAnswer": "o",
+          "explanation": "\"Six o'clock\" — the standard way to say exact hours.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "levelCode": "A1",
+      "moduleId": "m2",
+      "moduleTitle": "Module 2: Daily Routine",
+      "title": "Lesson 9: Days of the Week",
+      "order": 3,
+      "description": "Learn the days of the week and how to talk about your weekly schedule.",
+      "estimatedMinutes": 30,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "The days of the week in English are:\n\n1. **Monday** (Mon) — first day of the work week\n2. **Tuesday** (Tue) — often shortened to \"Tues\"\n3. **Wednesday** (Wed) — note the silent 'd' in pronunciation\n4. **Thursday** (Thu) — don't confuse with Tuesday!\n5. **Friday** (Fri) — last day of the work week\n6. **Saturday** (Sat) — weekend!\n7. **Sunday** (Sun) — weekend!\n\n**Prepositions:**\n• We use **on** with days: \"on Monday,\" \"on Friday\"\n• **Every** for repetition: \"every Monday,\" \"every day\"\n\n**Useful expressions:**\n• \"I have English class on Mondays and Wednesdays.\"\n• \"What do you do on weekends?\"\n• \"The meeting is on Tuesday.\"\n• \"I work from Monday to Friday.\"\n\nNote: In English-speaking countries, the week usually starts on Monday (work) or Sunday (calendar)."
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "My Weekly Schedule",
+          "body": "Read about Pedro's week:\n\n\"On Monday, I go to the gym after work. On Tuesday, I have an English class. On Wednesday, I meet my friends for dinner. On Thursday, I have another English class. On Friday, I relax and watch movies. On Saturday, I do my shopping and clean the house. On Sunday, I rest and spend time with my family.\"\n\nNotice the pattern: \"On [day], I [activity].\" This is a natural way to describe your weekly routine."
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "Which day comes after Wednesday?",
+          "options": ["Tuesday", "Thursday", "Friday", "Monday"],
+          "correctAnswer": "1",
+          "explanation": "Thursday comes after Wednesday.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "fill-blank",
+          "question": "We use the preposition '___' with days: '___ Monday.'",
+          "options": [],
+          "correctAnswer": "on",
+          "explanation": "\"On Monday\" — the correct preposition for days.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 3,
+          "type": "multiple-choice",
+          "question": "Which days are the weekend?",
+          "options": ["Monday and Tuesday", "Friday and Saturday", "Saturday and Sunday", "Sunday and Monday"],
+          "correctAnswer": "2",
+          "explanation": "Saturday and Sunday are the weekend.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 4,
+          "type": "fill-blank",
+          "question": "Wednesday is often abbreviated as ___.",
+          "options": [],
+          "correctAnswer": "Wed",
+          "explanation": "Wednesday = Wed. The 'd' is silent in pronunciation.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "multiple-choice",
+          "question": "Pedro has English class on:",
+          "options": ["Monday and Wednesday", "Tuesday and Thursday", "Friday and Saturday", "Sunday and Monday"],
+          "correctAnswer": "1",
+          "explanation": "Pedro says he has English class on Tuesday and Thursday.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 6,
+          "type": "fill-blank",
+          "question": "\"I work from Monday ___ Friday.\"",
+          "options": [],
+          "correctAnswer": "to",
+          "explanation": "\"From Monday to Friday\" — the work week.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "multiple-choice",
+          "question": "On which day does Pedro go to the gym?",
+          "options": ["Tuesday", "Wednesday", "Monday", "Friday"],
+          "correctAnswer": "2",
+          "explanation": "Pedro goes to the gym on Monday.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 8,
+          "type": "fill-blank",
+          "question": "On ___, Pedro rests and spends time with family.",
+          "options": [],
+          "correctAnswer": "Sunday",
+          "explanation": "Sunday is Pedro's rest day with family.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 9,
+          "type": "multiple-choice",
+          "question": "Which day is the last day of the work week?",
+          "options": ["Thursday", "Friday", "Saturday", "Sunday"],
+          "correctAnswer": "1",
+          "explanation": "Friday is the last day of the work week.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 10,
+          "type": "fill-blank",
+          "question": "\"What do you do on ___?\" (asking about Saturday and Sunday)",
+          "options": [],
+          "correctAnswer": "weekends",
+          "explanation": "\"What do you do on weekends?\" — a common question.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "levelCode": "A1",
+      "moduleId": "m2",
+      "moduleTitle": "Module 2: Daily Routine",
+      "title": "Lesson 10: Food & Meals",
+      "order": 4,
+      "description": "Learn vocabulary about food, meals, and ordering at a restaurant.",
+      "estimatedMinutes": 35,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "Talking about food is one of the most useful skills in English!\n\n**Meals of the day:**\n• breakfast (morning) — I have cereal for breakfast\n• lunch (midday) — I eat a sandwich for lunch\n• dinner / supper (evening) — We have dinner at 7 PM\n• snack (between meals) — I eat a snack at 4 PM\n\n**At a restaurant:**\n• \"Can I see the menu, please?\"\n• \"I'd like the chicken, please.\" (= I would like)\n• \"Can I have...?\"\n• \"How much is it?\"\n• \"The bill, please.\" / \"The check, please.\"\n• \"I'll have...\" (= I will have)\n\n**Common food words:**\n• rice, beans, chicken, fish, beef, salad, soup, bread, cheese, fruit, water, juice, coffee, tea"
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "At a Restaurant",
+          "body": "Read the conversation at a café:\n\n**Waiter:** Good afternoon! Are you ready to order?\n**Customer:** Yes, I'd like the chicken sandwich, please.\n**Waiter:** Would you like anything to drink?\n**Customer:** A glass of water, please.\n**Waiter:** Anything else?\n**Customer:** No, that's all, thank you.\n\n**(After the meal)**\n\n**Customer:** Excuse me, the bill, please.\n**Waiter:** Of course! That'll be twelve dollars.\n**Customer:** Here you go.\n**Waiter:** Thank you! Have a nice day!\n\nNotice the polite expressions: \"I'd like,\" \"please,\" \"Excuse me,\" \"thank you.\""
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "\"I'd like\" is short for:",
+          "options": ["I do like", "I would like", "I did like", "I will like"],
+          "correctAnswer": "1",
+          "explanation": "\"I'd like\" = \"I would like\" — polite way to order.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "fill-blank",
+          "question": "The morning meal is called ___.",
+          "options": [],
+          "correctAnswer": "breakfast",
+          "explanation": "Breakfast — the first meal of the day.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 3,
+          "type": "multiple-choice",
+          "question": "What does the customer order to drink?",
+          "options": ["Coffee", "Juice", "Water", "Tea"],
+          "correctAnswer": "2",
+          "explanation": "The customer orders \"a glass of water.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 4,
+          "type": "fill-blank",
+          "question": "\"Can I have the ___, please?\" — asking for the price.",
+          "options": [],
+          "correctAnswer": "bill",
+          "explanation": "\"The bill, please\" (UK) or \"The check, please\" (US).",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "multiple-choice",
+          "question": "What does the customer eat?",
+          "options": ["A salad", "A chicken sandwich", "A soup", "A steak"],
+          "correctAnswer": "1",
+          "explanation": "The customer orders \"the chicken sandwich.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 6,
+          "type": "fill-blank",
+          "question": "The evening meal is called ___.",
+          "options": [],
+          "correctAnswer": "dinner",
+          "explanation": "Dinner (or supper) — the evening meal.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "multiple-choice",
+          "question": "\"No, that's ___\" — to say you don't want anything else.",
+          "options": ["nothing", "all", "fine", "enough"],
+          "correctAnswer": "1",
+          "explanation": "\"That's all\" — meaning you're finished ordering.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 8,
+          "type": "fill-blank",
+          "question": "The meal costs ___ dollars.",
+          "options": [],
+          "correctAnswer": "twelve",
+          "explanation": "The waiter says \"That'll be twelve dollars.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 9,
+          "type": "multiple-choice",
+          "question": "A meal eaten between lunch and dinner is called:",
+          "options": ["Breakfast", "Brunch", "Snack", "Supper"],
+          "correctAnswer": "2",
+          "explanation": "A snack is a small meal eaten between main meals.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 10,
+          "type": "fill-blank",
+          "question": "\"___ you like anything to drink?\" — the waiter asks.",
+          "options": [],
+          "correctAnswer": "Would",
+          "explanation": "\"Would you like...?\" — polite offer.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "levelCode": "A1",
+      "moduleId": "m2",
+      "moduleTitle": "Module 2: Daily Routine",
+      "title": "Lesson 11: Weather & Seasons",
+      "order": 5,
+      "description": "Learn to talk about the weather and the four seasons.",
+      "estimatedMinutes": 30,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "Talking about the weather is one of the most common small talk topics in English!\n\n**Weather vocabulary:**\n• sunny — The sun is shining\n• cloudy — There are clouds in the sky\n• rainy — It's raining\n• windy — It's very windy today\n• snowy — It's snowing\n• hot / cold / warm / cool\n\n**Asking about weather:**\n• \"What's the weather like today?\"\n• \"How's the weather?\"\n• \"Is it going to rain?\"\n\n**The four seasons:**\n• spring (March-May) — flowers bloom, warm\n• summer (June-August) — hot, sunny, vacation\n• fall / autumn (September-November) — leaves change color, cool\n• winter (December-February) — cold, snow\n\n**Examples:**\n• \"It's sunny today!\"\n• \"In Brazil, it's hot in summer.\"\n• \"I like autumn because of the colors.\"\n\nNote: In the Southern Hemisphere (like Brazil), the seasons are reversed compared to the Northern Hemisphere."
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "Weather Around the World",
+          "body": "Read about weather in different places:\n\n**London:** \"In London, it rains a lot. It's often cloudy and sometimes windy. Summers are warm, and winters are cold but not very snowy.\"\n\n**São Paulo:** \"São Paulo has two main seasons: a hot, rainy summer and a dry, mild winter. It's warm most of the year.\"\n\n**Tokyo:** \"Tokyo has four clear seasons. Spring is beautiful with cherry blossoms. Summer is hot and humid. Autumn is cool and colorful. Winter is cold and sometimes snowy.\"\n\nNotice how each place has a different weather pattern. This makes for great conversation topics!"
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "\"What's the weather ___ today?\"",
+          "options": ["is", "like", "for", "about"],
+          "correctAnswer": "1",
+          "explanation": "\"What's the weather like?\" — the standard question.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "fill-blank",
+          "question": "The season after summer is ___.",
+          "options": [],
+          "correctAnswer": "autumn",
+          "explanation": "Autumn (or fall) comes after summer.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 3,
+          "type": "multiple-choice",
+          "question": "In London, it rains:",
+          "options": ["rarely", "a lot", "never", "only in summer"],
+          "correctAnswer": "1",
+          "explanation": "London is known for rainy weather.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 4,
+          "type": "fill-blank",
+          "question": "In spring, ___ bloom.",
+          "options": [],
+          "correctAnswer": "flowers",
+          "explanation": "Spring is when flowers bloom.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "multiple-choice",
+          "question": "São Paulo's summer is:",
+          "options": ["cold and dry", "hot and rainy", "snowy", "windy"],
+          "correctAnswer": "1",
+          "explanation": "São Paulo has a hot, rainy summer.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 6,
+          "type": "fill-blank",
+          "question": "When the wind blows a lot, it's ___.",
+          "options": [],
+          "correctAnswer": "windy",
+          "explanation": "\"Windy\" — adjective from the noun \"wind.\"",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "multiple-choice",
+          "question": "In the Southern Hemisphere, seasons are ___ compared to the North.",
+          "options": ["the same", "reversed", "cancelled", "longer"],
+          "correctAnswer": "1",
+          "explanation": "In the Southern Hemisphere, seasons are reversed.",
+          "difficulty": "medium"
+        },
+        {
+          "order": 8,
+          "type": "fill-blank",
+          "question": "Tokyo has ___ clear seasons.",
+          "options": [],
+          "correctAnswer": "four",
+          "explanation": "Tokyo has four distinct seasons.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 9,
+          "type": "multiple-choice",
+          "question": "Which word means the same as \"fall\"?",
+          "options": ["Spring", "Summer", "Autumn", "Winter"],
+          "correctAnswer": "2",
+          "explanation": "\"Fall\" and \"autumn\" mean the same season.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 10,
+          "type": "fill-blank",
+          "question": "\"It's ___ today!\" — when the sun is shining.",
+          "options": [],
+          "correctAnswer": "sunny",
+          "explanation": "\"Sunny\" — adjective from the noun \"sun.\"",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "levelCode": "A1",
+      "moduleId": "m2",
+      "moduleTitle": "Module 2: Daily Routine",
+      "title": "Lesson 12: Family Members",
+      "order": 6,
+      "description": "Learn vocabulary for family members and how to describe your family.",
+      "estimatedMinutes": 35,
+      "isActive": true,
+      "content": [
+        {
+          "order": 1,
+          "type": "text",
+          "body": "Family is an important topic in any language. Let's learn the key vocabulary:\n\n**Immediate family:**\n• mother / mom / mum\n• father / dad\n• sister\n• brother\n• son\n• daughter\n• husband\n• wife\n\n**Extended family:**\n• grandmother / grandma\n• grandfather / grandpa\n• uncle (brother of your parent)\n• aunt (sister of your parent)\n• cousin (child of your uncle or aunt)\n• nephew (son of your sibling)\n• niece (daughter of your sibling)\n\n**Useful expressions:**\n• \"I have two brothers and one sister.\"\n• \"My family is big / small.\"\n• \"I'm the oldest / youngest.\"\n• \"I have a close relationship with my...\"\n• \"My parents live in...\"\n\nIn English, we don't distinguish between maternal and paternal relatives (like in Portuguese: tio materno vs. tio paterno). We just say \"uncle\" for both."
+        },
+        {
+          "order": 2,
+          "type": "reading",
+          "title": "My Family",
+          "body": "Read about Ana's family:\n\n\"I have a small family. There are four people: my mother, my father, my younger brother, and me. My mother is a teacher. My father is an engineer. My brother's name is Lucas — he's 15 years old and he's a student. My grandparents live in another city. I visit them every summer. I have two cousins on my mother's side and one on my father's side.\"\n\nNotice how Ana uses \"There are\" to count family members and \"my\" to show possession."
+        }
+      ],
+      "exercises": [
+        {
+          "order": 1,
+          "type": "multiple-choice",
+          "question": "Your mother's sister is your:",
+          "options": ["grandmother", "aunt", "cousin", "niece"],
+          "correctAnswer": "1",
+          "explanation": "Your parent's sister is your aunt.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 2,
+          "type": "fill-blank",
+          "question": "The opposite of \"youngest\" is ___.",
+          "options": [],
+          "correctAnswer": "oldest",
+          "explanation": "Oldest = the first-born; youngest = the last-born.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 3,
+          "type": "multiple-choice",
+          "question": "How many people are in Ana's immediate family?",
+          "options": ["3", "4", "5", "6"],
+          "correctAnswer": "1",
+          "explanation": "Mother, father, brother, and Ana = 4 people.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 4,
+          "type": "fill-blank",
+          "question": "Your father's father is your ___.",
+          "options": [],
+          "correctAnswer": "grandfather",
+          "explanation": "Grandfather (or grandpa) — your parent's father.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 5,
+          "type": "multiple-choice",
+          "question": "Ana's brother is ___ years old.",
+          "options": ["10", "12", "15", "20"],
+          "correctAnswer": "2",
+          "explanation": "Lucas is 15 years old.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 6,
+          "type": "fill-blank",
+          "question": "Ana visits her grandparents every ___.",
+          "options": [],
+          "correctAnswer": "summer",
+          "explanation": "Ana visits them every summer.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 7,
+          "type": "multiple-choice",
+          "question": "Your brother's daughter is your:",
+          "options": ["nephew", "niece", "cousin", "aunt"],
+          "correctAnswer": "1",
+          "explanation": "Your sibling's daughter is your niece.",
+          "difficulty": "medium"
+        },
+        {
+          "order": 8,
+          "type": "fill-blank",
+          "question": "Ana's mother is a ___.",
+          "options": [],
+          "correctAnswer": "teacher",
+          "explanation": "Ana's mother is a teacher.",
+          "difficulty": "easy"
+        },
+        {
+          "order": 9,
+          "type": "multiple-choice",
+          "question": "In English, we say just \"uncle\" for:",
+          "options": ["Only maternal uncles", "Only paternal uncles", "Both maternal and paternal uncles", "Only older uncles"],
+          "correctAnswer": "2",
+          "explanation": "English doesn't distinguish between maternal and paternal uncles.",
+          "difficulty": "medium"
+        },
+        {
+          "order": 10,
+          "type": "fill-blank",
+          "question": "\"There ___ four people in my family.\"",
+          "options": [],
+          "correctAnswer": "are",
+          "explanation": "\"There are\" — used for counting people/things.",
+          "difficulty": "easy"
+        }
+      ]
+    }
+  ]
+}
