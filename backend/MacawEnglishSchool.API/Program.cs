@@ -13,6 +13,17 @@ builder.Services.AddControllers();
 // Configure MongoDB
 var mongoDbSettings = new MongoDbSettings();
 builder.Configuration.GetSection("MongoDb").Bind(mongoDbSettings);
+
+// Log connection status at startup (safe - only logs whether it's configured, not the value)
+if (string.IsNullOrWhiteSpace(mongoDbSettings.ConnectionString))
+{
+    throw new InvalidOperationException("MongoDb ConnectionString is not configured. Set the MongoDb__ConnectionString environment variable.");
+}
+if (string.IsNullOrWhiteSpace(mongoDbSettings.DatabaseName))
+{
+    throw new InvalidOperationException("MongoDb DatabaseName is not configured. Set the MongoDb__DatabaseName environment variable.");
+}
+
 builder.Services.AddSingleton(mongoDbSettings);
 builder.Services.AddSingleton<MongoDbService>();
 
