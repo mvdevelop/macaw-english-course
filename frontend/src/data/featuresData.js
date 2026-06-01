@@ -3,22 +3,22 @@ import { BookOpenIcon, UsersIcon, AwardIcon, GlobeIcon } from "lucide-react";
 export const featuresData = [
     {
         icon: BookOpenIcon,
-        title: "Cursos Estruturados",
-        description: "Metodologia comprovada com aulas progressivas do básico ao avançado.",
+        title: "feature.structured.title",
+        description: "feature.structured.desc",
     },
     {
         icon: UsersIcon,
-        title: "Professores Experientes",
-        description: "Instrutores nativos e certificados com anos de experiência no ensino.",
+        title: "feature.teachers.title",
+        description: "feature.teachers.desc",
     },
     {
         icon: AwardIcon,
-        title: "Certificações Internacionais",
-        description: "Prepare-se para exames como TOEFL, IELTS e Cambridge.",
+        title: "feature.certifications.title",
+        description: "feature.certifications.desc",
     },
     {
         icon: GlobeIcon,
-        title: "Aulas Online e Presenciais",
-        description: "Flexibilidade para estudar no seu ritmo, quando e onde quiser.",
+        title: "feature.flexible.title",
+        description: "feature.flexible.desc",
     },
 ];

@@ -2,93 +2,93 @@ import { CheckIcon } from "lucide-react";
 
 export const pricingData = [
     {
-        title: "Iniciante",
+        title: "plan.beginner.title",
         price: 99,
         features: [
             {
-                name: "4 aulas por mês",
+                name: "plan.beginner.feature1",
                 icon: CheckIcon,
             },
             {
-                name: "Acesso ao material online",
+                name: "plan.beginner.feature2",
                 icon: CheckIcon,
             },
             {
-                name: "Suporte por email",
+                name: "plan.beginner.feature3",
                 icon: CheckIcon,
             },
             {
-                name: "Certificado de conclusão",
+                name: "plan.beginner.feature4",
                 icon: CheckIcon,
             },
             {
-                name: "Comunidade de alunos",
+                name: "plan.beginner.feature5",
                 icon: CheckIcon,
             },
         ],
-        buttonText: "Começar Agora",
+        buttonText: "plan.beginner.button",
     },
     {
-        title: "Intermediário",
+        title: "plan.intermediate.title",
         price: 199,
         mostPopular: true,
         features: [
             {
-                name: "8 aulas por mês",
+                name: "plan.intermediate.feature1",
                 icon: CheckIcon,
             },
             {
-                name: "Acesso completo ao material",
+                name: "plan.intermediate.feature2",
                 icon: CheckIcon,
             },
             {
-                name: "Suporte prioritário",
+                name: "plan.intermediate.feature3",
                 icon: CheckIcon,
             },
             {
-                name: "Aulas em grupo e individuais",
+                name: "plan.intermediate.feature4",
                 icon: CheckIcon,
             },
             {
-                name: "Preparação para certificações",
+                name: "plan.intermediate.feature5",
                 icon: CheckIcon,
             },
             {
-                name: "Feedback personalizado",
+                name: "plan.intermediate.feature6",
                 icon: CheckIcon,
             }
         ],
-        buttonText: "Inscrever-se",
+        buttonText: "plan.intermediate.button",
     },
     {
-        title: "Avançado",
+        title: "plan.advanced.title",
         price: 349,
         features: [
             {
-                name: "Aulas ilimitadas",
+                name: "plan.advanced.feature1",
                 icon: CheckIcon,
             },
             {
-                name: "Aulas 1-on-1 com professor nativo",
+                name: "plan.advanced.feature2",
                 icon: CheckIcon,
             },
             {
-                name: "Suporte 24/7",
+                name: "plan.advanced.feature3",
                 icon: CheckIcon,
             },
             {
-                name: "Preparação para exames internacionais",
+                name: "plan.advanced.feature4",
                 icon: CheckIcon,
             },
             {
-                name: "Plano de estudos personalizado",
+                name: "plan.advanced.feature5",
                 icon: CheckIcon,
             },
             {
-                name: "Acesso a recursos premium",
+                name: "plan.advanced.feature6",
                 icon: CheckIcon,
             }
         ],
-        buttonText: "Contatar Vendas",
+        buttonText: "plan.advanced.button",
     }
 ];

@@ -1,22 +1,22 @@
 export const faqsData = [
     {
-        question: "Qual é a metodologia de ensino da Macaw?",
-        answer: "Utilizamos uma metodologia comunicativa e interativa, focada no desenvolvimento prático do idioma. Nossas aulas combinam gramática, conversação, leitura e escrita de forma equilibrada."
+        question: "faq.1.question",
+        answer: "faq.1.answer",
     },
     {
-        question: "Posso fazer uma aula experimental?",
-        answer: "Sim! Oferecemos uma aula experimental gratuita para que você conheça nossos professores e metodologia. Basta entrar em contato conosco para agendar."
+        question: "faq.2.question",
+        answer: "faq.2.answer",
     },
     {
-        question: "Posso mudar de plano depois de me inscrever?",
-        answer: "Claro! Você pode fazer upgrade ou downgrade do seu plano a qualquer momento. Basta acessar sua conta ou entrar em contato com nosso suporte."
+        question: "faq.3.question",
+        answer: "faq.3.answer",
     },
     {
-        question: "Vocês oferecem preparação para certificações internacionais?",
-        answer: "Sim! Oferecemos preparação para TOEFL, IELTS, Cambridge e outras certificações. Nossos professores são especializados em preparação para esses exames."
+        question: "faq.4.question",
+        answer: "faq.4.answer",
     },
     {
-        question: "Como funciona o suporte ao aluno?",
-        answer: "Nosso time de suporte está disponível por email, WhatsApp e chat. Também temos um portal com materiais, exercícios e dúvidas frequentes para ajudar seu aprendizado."
+        question: "faq.5.question",
+        answer: "faq.5.answer",
     }
 ];
