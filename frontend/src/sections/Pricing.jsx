@@ -8,7 +8,7 @@ export default function Pricing() {
     const { theme } = useThemeContext();
     const { t } = useTranslation();
     return (
-        <div className="relative">
+        <div className="relative pt-20 pb-20">
             <img className="absolute -mt-20 md:-mt-100 md:left-20 pointer-events-none" src={theme === "dark" ? "/assets/color-splash.svg" : "/assets/color-splash-light.svg"} alt="color-splash" width={1000} height={1000} priority fetchPriority="high" />
             <SectionTitle text1={t("pricing.label")} text2={t("pricing.title")} text3={t("pricing.subtitle")} />
 

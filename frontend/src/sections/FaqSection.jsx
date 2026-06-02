@@ -10,7 +10,7 @@ export const FaqSection = () => {
     const { t } = useTranslation();
     const [openIndex, setOpenIndex] = useState(null);
     return (
-        <div className="relative max-w-2xl mx-auto flex flex-col items-center justify-center px-4 md:px-0">
+        <div className="relative max-w-2xl mx-auto flex flex-col items-center justify-center px-4 md:px-0 pt-20 pb-32">
             <img className="absolute -mb-120 -left-40 -z-10 pointer-events-none" src={theme === "dark" ? "/assets/color-splash.svg" : "/assets/color-splash-light.svg"} alt="color-splash" width={1000} height={1000} priority fetchPriority="high" />
             <SectionTitle text1={t("faq.label")} text2={t("faq.title")} text3="" />
             <div className="mt-8">

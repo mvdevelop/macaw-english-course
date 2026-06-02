@@ -31,7 +31,7 @@ export default function Navbar() {
             </a>
             <div className="hidden items-center md:gap-8 lg:gap-9 md:flex lg:pl-20">
                 {navLinks.map((link) => (
-                    <a key={link.name} href={link.href} className="hover:text-slate-600 dark:hover:text-slate-300">
+                    <a key={link.name} href={link.href} className="text-base font-medium nav-link-neon transition-colors duration-300">
                         {t(link.name)}
                     </a>
                 ))}

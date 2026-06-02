@@ -21,3 +21,55 @@ body {
 button {
     @apply cursor-pointer;
 }
+
+/* --- Spinner de loading azul --- */
+@keyframes spin-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner-blue {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #dceefa;
+    border-top-color: #4895ef;
+    border-radius: 50%;
+    animation: spin-border 0.8s linear infinite;
+}
+
+/* --- Navbar hover neon --- */
+@keyframes neon-glow {
+    0% {
+        background-size: 0% 3px;
+    }
+    100% {
+        background-size: 100% 3px;
+    }
+}
+
+.nav-link-neon {
+    position: relative;
+}
+
+.nav-link-neon::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, #6db0f7, #4895ef, #6db0f7, transparent);
+    border-radius: 9999px;
+    box-shadow: 0 0 6px rgba(72, 149, 239, 0.4);
+    transition: width 0.3s ease;
+}
+
+.nav-link-neon:hover::after {
+    width: 100%;
+}
+
+.nav-link-neon:hover {
+    color: #6db0f7 !important;
+    text-shadow: 0 0 8px rgba(72, 149, 239, 0.3);
+}

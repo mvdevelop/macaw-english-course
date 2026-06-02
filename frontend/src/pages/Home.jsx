@@ -1,7 +1,7 @@
 "use client"
-import { VideoIcon } from "lucide-react";
-import Marquee from "react-fast-marquee";
-import { companiesLogo } from "../data/companiesLogo";
+import { useState } from "react";
+import { VideoIcon, SendIcon, CheckCircleIcon, ArrowRightIcon } from "lucide-react";
+import { levelsData } from "../data/levelsData";
 import { featuresData } from "../data/featuresData";
 import SectionTitle from "../components/SectionTitle";
 import { useThemeContext } from "../context/ThemeContext";
@@ -12,9 +12,19 @@ import { useTranslation } from "../i18n/LanguageContext";
 export default function Page() {
     const { theme } = useThemeContext();
     const { t } = useTranslation();
+    const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
+    const [contactSent, setContactSent] = useState(false);
+
+    const handleContactSubmit = (e) => {
+        e.preventDefault();
+        setContactSent(true);
+        setContactForm({ name: "", email: "", message: "" });
+        setTimeout(() => setContactSent(false), 4000);
+    };
+
     return (
         <>
-            <div className="flex flex-col items-center justify-center text-center px-4 bg-[url('/assets/light-hero-gradient.svg')] dark:bg-[url('/assets/dark-hero-gradient.svg')] bg-no-repeat bg-cover">
+            <div id="home" className="flex flex-col items-center justify-center text-center px-4 pb-16 bg-[url('/assets/light-hero-gradient.svg')] dark:bg-[url('/assets/dark-hero-gradient.svg')] bg-no-repeat bg-cover">
                 <div className="flex flex-wrap items-center justify-center gap-3 p-1.5 pr-4 mt-46 rounded-full border border-slate-300 dark:border-slate-600 bg-white/70 dark:bg-slate-600/20">
                     <div className="flex items-center -space-x-3">
                         <img className="size-7 rounded-full" height={50} width={50}
@@ -45,36 +55,55 @@ export default function Page() {
                         <span>{t("hero.trialClass")}</span>
                     </button>
                 </div>
-                <h3 className="text-base text-center text-slate-400 mt-28 pb-14 font-medium">
-                    {t("hero.trusted")}
-                </h3>
-                <Marquee className="max-w-5xl mx-auto" gradient={true} speed={25} gradientColor={theme === "dark" ? "#000" : "#fff"}>
-                    <div className="flex items-center justify-center">
-                        {[...companiesLogo, ...companiesLogo].map((company, index) => (
-                            <img key={index} className="mx-11" src={company.logo} alt={company.name} width={100} height={100} />
-                        ))}
-                    </div>
-                </Marquee>
             </div>
 
-            <SectionTitle text1={t("courses.label")} text2={t("courses.title")} text3={t("courses.subtitle")} />
+            {/* Gradient transition: Hero → Levels */}
+            <div className="h-24 bg-gradient-to-b from-white to-[#eaf4fe] dark:from-gray-950 dark:to-[#0d0d1a]" />
 
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-4 mt-10 px-6 md:px-16 lg:px-24 xl:px-32">
-                {featuresData.map((feature, index) => (
-                    <div key={index} className="p-6 rounded-xl space-y-3 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/20 max-w-80 md:max-w-66">
-                        <feature.icon className="text-primary size-8 mt-4" strokeWidth={1.3} />
-                        <h3 className="text-base font-medium">{t(feature.title)}</h3>
-                        <p className="text-slate-400 line-clamp-2">{t(feature.description)}</p>
-                    </div>
-                ))}
+            {/* Níveis CEFR — do A1 ao C2 */}
+            <div className="relative pt-16 pb-20 bg-[#eaf4fe] dark:bg-[#0d0d1a]">
+                <SectionTitle text1={t("levels.label")} text2={t("levels.title")} text3={t("levels.subtitle")} />
+
+                <div id="cursos" className="flex flex-wrap items-start justify-center gap-6 mt-12 px-6 md:px-16 lg:px-24 xl:px-32">
+                    {levelsData.map((level) => (
+                        <div key={level.code} className="group p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/20 max-w-80 w-full hover:shadow-lg hover:shadow-black/5 transition-all duration-300 hover:-translate-y-1">
+                            <div className={`inline-flex items-center justify-center size-12 rounded-xl bg-gradient-to-br ${level.color} text-white mb-4`}>
+                                <level.icon className="size-6" strokeWidth={1.5} />
+                            </div>
+                            <div className="flex items-center gap-2 mb-1">
+                                <span className={`text-lg font-bold bg-gradient-to-r ${level.color} bg-clip-text text-transparent`}>
+                                    {level.label}
+                                </span>
+                                <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">{t(`level.${level.code}.name`)}</span>
+                            </div>
+                            <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                                {t(level.description_key)}
+                            </p>
+                            <div className="space-y-1.5">
+                                {t(level.topics_key).split(" • ").map((topic, i) => (
+                                    <div key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+                                        <ArrowRightIcon className="size-3.5 text-primary shrink-0" />
+                                        <span>{topic.trim()}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
+
+            {/* Gradient transition: Levels → Pricing */}
+            <div className="h-20 bg-gradient-to-b from-[#eaf4fe] to-white dark:from-[#0d0d1a] dark:to-gray-950" />
 
             <Pricing />
 
             <FaqSection />
 
-            <div className="flex flex-col items-center text-center justify-center mt-20">
-                <h3 className="text-3xl font-semibold mt-16 mb-4">{t("cta.title")}</h3>
+            {/* Gradient transition: FAQ → CTA */}
+            <div className="h-20 bg-gradient-to-b from-white to-slate-50 dark:from-gray-950 dark:to-[#15152a]" />
+
+            <div className="flex flex-col items-center text-center justify-center px-4 py-20 bg-slate-50 dark:bg-[#15152a]">
+                <h3 className="text-3xl font-semibold mb-4">{t("cta.title")}</h3>
                 <p className="text-slate-600 dark:text-slate-200 max-w-xl mx-auto">
                     {t("cta.subtitle")}
                 </p>
@@ -85,6 +114,69 @@ export default function Page() {
                     <button className="border border-primary-dark transition text-slate-600 dark:text-white rounded-md px-6 h-11">
                         {t("cta.talkConsultant")}
                     </button>
+                </div>
+            </div>
+
+            {/* Gradient transition: CTA → Contact (light slate → dark lead) */}
+            <div className="h-28 bg-gradient-to-b from-slate-50 to-[#1a1a2e] dark:from-[#15152a] dark:to-[#12121f]" />
+
+            {/* Contact Section — cinza chumbo */}
+            <div id="contato" className="bg-[#1a1a2e] dark:bg-[#12121f]">
+                <div className="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 xl:px-32 py-20">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-semibold text-white">{t("contact.title")}</h2>
+                        <p className="text-slate-300 max-w-lg mx-auto mt-3">{t("contact.subtitle")}</p>
+                    </div>
+                    {contactSent ? (
+                        <div className="flex flex-col items-center justify-center py-12 text-center">
+                            <CheckCircleIcon className="size-16 text-primary mb-4" />
+                            <h3 className="text-xl font-semibold text-white">{t("contact.success")}</h3>
+                            <p className="text-slate-300 mt-2">{t("contact.successMsg")}</p>
+                        </div>
+                    ) : (
+                        <form onSubmit={handleContactSubmit} className="max-w-xl mx-auto space-y-5">
+                            <div>
+                                <label className="block text-sm font-medium text-slate-300 mb-1.5">{t("contact.nameLabel")}</label>
+                                <input
+                                    type="text"
+                                    required
+                                    value={contactForm.name}
+                                    onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                                    className="w-full px-4 py-3 rounded-lg bg-[#2a2a3e] border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                                    placeholder={t("contact.namePlaceholder")}
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-slate-300 mb-1.5">{t("contact.emailLabel")}</label>
+                                <input
+                                    type="email"
+                                    required
+                                    value={contactForm.email}
+                                    onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                                    className="w-full px-4 py-3 rounded-lg bg-[#2a2a3e] border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                                    placeholder={t("contact.emailPlaceholder")}
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-slate-300 mb-1.5">{t("contact.messageLabel")}</label>
+                                <textarea
+                                    required
+                                    rows={5}
+                                    value={contactForm.message}
+                                    onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
+                                    className="w-full px-4 py-3 rounded-lg bg-[#2a2a3e] border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition resize-none"
+                                    placeholder={t("contact.messagePlaceholder")}
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark transition text-white rounded-lg px-6 h-12 font-medium"
+                            >
+                                <SendIcon className="size-4" />
+                                {t("contact.sendButton")}
+                            </button>
+                        </form>
+                    )}
                 </div>
             </div>
 

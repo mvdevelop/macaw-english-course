@@ -1,0 +1,58 @@
+import { BookOpenIcon, MessageCircleIcon, BookMarkedIcon, MicIcon, GraduationCapIcon, TrophyIcon } from "lucide-react";
+
+export const levelsData = [
+    {
+        code: "a1",
+        label: "A1",
+        name: "Beginner",
+        color: "from-green-400 to-green-600",
+        icon: BookOpenIcon,
+        description_key: "level.a1.desc",
+        topics_key: "level.a1.topics",
+    },
+    {
+        code: "a2",
+        label: "A2",
+        name: "Elementary",
+        color: "from-blue-400 to-blue-600",
+        icon: MessageCircleIcon,
+        description_key: "level.a2.desc",
+        topics_key: "level.a2.topics",
+    },
+    {
+        code: "b1",
+        label: "B1",
+        name: "Intermediate",
+        color: "from-purple-400 to-purple-600",
+        icon: BookMarkedIcon,
+        description_key: "level.b1.desc",
+        topics_key: "level.b1.topics",
+    },
+    {
+        code: "b2",
+        label: "B2",
+        name: "Upper Intermediate",
+        color: "from-orange-400 to-orange-600",
+        icon: MicIcon,
+        description_key: "level.b2.desc",
+        topics_key: "level.b2.topics",
+    },
+    {
+        code: "c1",
+        label: "C1",
+        name: "Advanced",
+        color: "from-red-400 to-red-600",
+        icon: GraduationCapIcon,
+        description_key: "level.c1.desc",
+        topics_key: "level.c1.topics",
+    },
+    {
+        code: "c2",
+        label: "C2",
+        name: "Proficiency",
+        color: "from-pink-400 to-pink-600",
+        icon: TrophyIcon,
+        description_key: "level.c2.desc",
+        topics_key: "level.c2.topics",
+    },
+];
