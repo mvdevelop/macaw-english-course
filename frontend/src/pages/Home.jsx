@@ -1,12 +1,11 @@
 "use client"
 import { useState } from "react";
-import { VideoIcon, SendIcon, CheckCircleIcon, ArrowRightIcon } from "lucide-react";
+import { VideoIcon, SendIcon, CheckCircleIcon, ArrowRightIcon, TrophyIcon, StarIcon } from "lucide-react";
 import { levelsData } from "../data/levelsData";
-import { featuresData } from "../data/featuresData";
+import { podiumData, reviewsData } from "../data/hallOfFameData";
 import SectionTitle from "../components/SectionTitle";
 import { useThemeContext } from "../context/ThemeContext";
 import { FaqSection } from "../sections/FaqSection";
-import Pricing from "../sections/Pricing";
 import { useTranslation } from "../i18n/LanguageContext";
 
 export default function Page() {
@@ -92,10 +91,69 @@ export default function Page() {
                 </div>
             </div>
 
-            {/* Gradient transition: Levels → Pricing */}
+            {/* Gradient transition: Levels → Hall of Fame */}
             <div className="h-20 bg-gradient-to-b from-[#eaf4fe] to-white dark:from-[#0d0d1a] dark:to-gray-950" />
 
-            <Pricing />
+            {/* Hall da Fama — Podium + Reviews */}
+            <div id="ranking" className="relative pt-20 pb-20">
+                <SectionTitle text1={t("hall.label")} text2={t("hall.title")} text3={t("hall.subtitle")} />
+
+                {/* Podium Top 3 */}
+                <div className="flex items-end justify-center gap-4 md:gap-6 mt-16 mb-20 px-6">
+                    {/* 2nd place */}
+                    <div className="flex flex-col items-center">
+                        <div className="relative">
+                            <img src={podiumData[1].image} alt={podiumData[1].name} className="size-16 md:size-20 rounded-full border-4 border-slate-300 dark:border-slate-600 object-cover" />
+                            <div className="absolute -top-2 -right-2 size-7 rounded-full bg-slate-300 dark:bg-slate-600 flex items-center justify-center text-sm font-bold text-slate-600 dark:text-slate-300">2</div>
+                        </div>
+                        <p className="mt-2 font-semibold text-sm text-center">{podiumData[1].name}</p>
+                        <p className="text-xs text-primary font-medium">{podiumData[1].level}</p>
+                        <p className="text-xs text-slate-400 mt-1">{podiumData[1].score}</p>
+                    </div>
+                    {/* 1st place */}
+                    <div className="flex flex-col items-center -mt-8">
+                        <div className="relative">
+                            <img src={podiumData[0].image} alt={podiumData[0].name} className="size-20 md:size-24 rounded-full border-4 border-yellow-400 object-cover" />
+                            <div className="absolute -top-3 -right-3 size-8 rounded-full bg-yellow-400 flex items-center justify-center text-sm font-bold text-yellow-900">1</div>
+                        </div>
+                        <TrophyIcon className="size-5 text-yellow-400 mt-2" />
+                        <p className="mt-1 font-semibold text-sm text-center">{podiumData[0].name}</p>
+                        <p className="text-xs text-primary font-medium">{podiumData[0].level}</p>
+                        <p className="text-xs text-slate-400 mt-1">{podiumData[0].score}</p>
+                    </div>
+                    {/* 3rd place */}
+                    <div className="flex flex-col items-center">
+                        <div className="relative">
+                            <img src={podiumData[2].image} alt={podiumData[2].name} className="size-16 md:size-20 rounded-full border-4 border-amber-700 object-cover" />
+                            <div className="absolute -top-2 -right-2 size-7 rounded-full bg-amber-700 flex items-center justify-center text-sm font-bold text-white">3</div>
+                        </div>
+                        <p className="mt-2 font-semibold text-sm text-center">{podiumData[2].name}</p>
+                        <p className="text-xs text-primary font-medium">{podiumData[2].level}</p>
+                        <p className="text-xs text-slate-400 mt-1">{podiumData[2].score}</p>
+                    </div>
+                </div>
+
+                {/* Reviews Grid */}
+                <div className="flex flex-wrap items-start justify-center gap-4 px-6 md:px-16 lg:px-24 xl:px-32">
+                    {reviewsData.map((review, index) => (
+                        <div key={index} className="p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/30 max-w-72 w-full hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
+                            <div className="flex items-center gap-3 mb-3">
+                                <img src={review.image} alt={review.name} className="size-10 rounded-full object-cover" />
+                                <div>
+                                    <p className="font-medium text-sm">{review.name}</p>
+                                    <p className="text-xs text-primary">{review.level}</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-0.5 mb-2">
+                                {Array.from({ length: 5 }).map((_, i) => (
+                                    <StarIcon key={i} className={`size-4 ${i < review.rating ? "text-yellow-400 fill-yellow-400" : "text-slate-200 dark:text-slate-600"}`} />
+                                ))}
+                            </div>
+                            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{review.comment}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
 
             <FaqSection />
 

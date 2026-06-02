@@ -8,8 +8,12 @@ export const navLinks = [
         href: "#cursos",
     },
     {
-        name: "nav.plans",
-        href: "#planos",
+        name: "nav.ranking",
+        href: "#ranking",
+    },
+    {
+        name: "nav.faq",
+        href: "#faq",
     },
     {
         name: "nav.contact",
