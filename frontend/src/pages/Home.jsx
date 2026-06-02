@@ -1,16 +1,20 @@
 "use client"
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { VideoIcon, SendIcon, CheckCircleIcon, ArrowRightIcon, TrophyIcon, StarIcon } from "lucide-react";
 import { levelsData } from "../data/levelsData";
 import { podiumData, reviewsData } from "../data/hallOfFameData";
 import SectionTitle from "../components/SectionTitle";
 import { useThemeContext } from "../context/ThemeContext";
+import { useAuth } from "../context/AuthContext";
 import { FaqSection } from "../sections/FaqSection";
 import { useTranslation } from "../i18n/LanguageContext";
 
 export default function Page() {
     const { theme } = useThemeContext();
     const { t } = useTranslation();
+    const { user } = useAuth();
+    const navigate = useNavigate();
     const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
     const [contactSent, setContactSent] = useState(false);
 
@@ -46,7 +50,10 @@ export default function Page() {
                     {t("hero.subtitle")}
                 </p>
                 <div className="flex items-center gap-4 mt-8">
-                    <button className="bg-primary hover:bg-primary-dark transition text-white rounded-md px-6 h-11">
+                    <button
+                        onClick={() => navigate(user ? "/dashboard" : "/login")}
+                        className="bg-primary hover:bg-primary-dark transition text-white rounded-md px-6 h-11"
+                    >
                         {t("hero.startNow")}
                     </button>
                     <button className="flex items-center gap-2 border border-primary-dark transition text-slate-600 dark:text-white rounded-md px-6 h-11">
@@ -157,26 +164,8 @@ export default function Page() {
 
             <FaqSection />
 
-            {/* Gradient transition: FAQ → CTA */}
-            <div className="h-20 bg-gradient-to-b from-white to-slate-50 dark:from-gray-950 dark:to-[#15152a]" />
-
-            <div className="flex flex-col items-center text-center justify-center px-4 py-20 bg-slate-50 dark:bg-[#15152a]">
-                <h3 className="text-3xl font-semibold mb-4">{t("cta.title")}</h3>
-                <p className="text-slate-600 dark:text-slate-200 max-w-xl mx-auto">
-                    {t("cta.subtitle")}
-                </p>
-                <div className="flex items-center gap-4 mt-8">
-                    <button className="bg-primary hover:bg-primary-dark transition text-white rounded-md px-6 h-11">
-                        {t("cta.startTrial")}
-                    </button>
-                    <button className="border border-primary-dark transition text-slate-600 dark:text-white rounded-md px-6 h-11">
-                        {t("cta.talkConsultant")}
-                    </button>
-                </div>
-            </div>
-
-            {/* Gradient transition: CTA → Contact (light slate → dark lead) */}
-            <div className="h-28 bg-gradient-to-b from-slate-50 to-[#1a1a2e] dark:from-[#15152a] dark:to-[#12121f]" />
+            {/* Gradient transition: FAQ → Contact */}
+            <div className="h-28 bg-gradient-to-b from-white to-[#1a1a2e] dark:from-gray-950 dark:to-[#12121f]" />
 
             {/* Contact Section — cinza chumbo */}
             <div id="contato" className="bg-[#1a1a2e] dark:bg-[#12121f]">
