@@ -11,6 +11,9 @@ public class AIController : ControllerBase
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly IConfiguration _configuration;
+    private static readonly SemaphoreSlim _rateLimiter = new(1, 1);
+    private static readonly Queue<DateTime> _requestTimestamps = new();
+    private const int MaxRequestsPerMinute = 50;
 
     public AIController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
     {
@@ -23,12 +26,16 @@ public class AIController : ControllerBase
     {
         var apiKey = _configuration["Gemini:ApiKey"];
         if (string.IsNullOrWhiteSpace(apiKey))
-            return BadRequest(new AiResponse { Error = "Gemini API key not configured. Set Gemini__ApiKey environment variable." });
+            return BadRequest(new AiResponse { Error = "Chave da API Gemini não configurada. Configure a variável de ambiente Gemini__ApiKey." });
 
         if (string.IsNullOrWhiteSpace(request.Prompt))
-            return BadRequest(new AiResponse { Error = "Prompt is required." });
+            return BadRequest(new AiResponse { Error = "Prompt é obrigatório." });
+
+        // ── Rate limiter: aguarda se estourou o limite por minuto ──
+        await EnforceRateLimit();
 
         var client = _httpClientFactory.CreateClient();
+        client.Timeout = TimeSpan.FromSeconds(30);
 
         var geminiPayload = new
         {
@@ -51,43 +58,100 @@ public class AIController : ControllerBase
         };
 
         var jsonPayload = JsonSerializer.Serialize(geminiPayload);
-        var httpContent = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
-        var response = await client.PostAsync(
-            $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={apiKey}",
-            httpContent
-        );
+        // ── Retry com exponential backoff para 429 ──
+        var maxRetries = 3;
+        var baseDelayMs = 1000;
 
-        var responseBody = await response.Content.ReadAsStringAsync();
-
-        if (!response.IsSuccessStatusCode)
+        for (int attempt = 1; attempt <= maxRetries; attempt++)
         {
+            var httpContent = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(
+                $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={apiKey}",
+                httpContent
+            );
+
+            var responseBody = await response.Content.ReadAsStringAsync();
+
+            if (response.IsSuccessStatusCode)
+            {
+                try
+                {
+                    using var doc = JsonDocument.Parse(responseBody);
+                    var text = doc.RootElement
+                        .GetProperty("candidates")[0]
+                        .GetProperty("content")
+                        .GetProperty("parts")[0]
+                        .GetProperty("text")
+                        .GetString();
+
+                    return Ok(new AiResponse { Text = text });
+                }
+                catch (Exception ex)
+                {
+                    return Ok(new AiResponse
+                    {
+                        Error = $"Falha ao processar resposta da IA: {ex.Message}",
+                        RawResponse = responseBody
+                    });
+                }
+            }
+
+            // Se for 429 (rate limit) e ainda temos tentativas, espera e retry
+            if ((int)response.StatusCode == 429 && attempt < maxRetries)
+            {
+                var delay = baseDelayMs * (int)Math.Pow(2, attempt - 1); // 1s, 2s, 4s
+                await Task.Delay(delay);
+                continue;
+            }
+
+            // Se for 429 na última tentativa, retorna erro amigável
+            if ((int)response.StatusCode == 429)
+            {
+                return StatusCode(429, new AiResponse
+                {
+                    Error = "A IA está temporariamente sobrecarregada. Aguarde alguns segundos e tente novamente.",
+                    RetryAfter = 5
+                });
+            }
+
+            // Outros erros
             return StatusCode((int)response.StatusCode, new AiResponse
             {
-                Error = $"Gemini API error: {response.StatusCode}",
+                Error = $"Erro na API Gemini: {(int)response.StatusCode}",
                 RawResponse = responseBody
             });
         }
 
+        return StatusCode(500, new AiResponse { Error = "Erro inesperado após todas as tentativas." });
+    }
+
+    private static async Task EnforceRateLimit()
+    {
+        await _rateLimiter.WaitAsync();
         try
         {
-            using var doc = JsonDocument.Parse(responseBody);
-            var text = doc.RootElement
-                .GetProperty("candidates")[0]
-                .GetProperty("content")
-                .GetProperty("parts")[0]
-                .GetProperty("text")
-                .GetString();
-
-            return Ok(new AiResponse { Text = text });
-        }
-        catch (Exception ex)
-        {
-            return Ok(new AiResponse
+            var now = DateTime.UtcNow;
+            // Remove timestamps mais antigos que 1 minuto
+            while (_requestTimestamps.Count > 0 && (now - _requestTimestamps.Peek()).TotalSeconds > 60)
             {
-                Error = $"Failed to parse Gemini response: {ex.Message}",
-                RawResponse = responseBody
-            });
+                _requestTimestamps.Dequeue();
+            }
+
+            if (_requestTimestamps.Count >= MaxRequestsPerMinute)
+            {
+                var oldest = _requestTimestamps.Peek();
+                var waitMs = (int)(60000 - (now - oldest).TotalMilliseconds) + 100;
+                if (waitMs > 0)
+                    await Task.Delay(waitMs);
+            }
+
+            _requestTimestamps.Enqueue(DateTime.UtcNow);
+        }
+        finally
+        {
+            _rateLimiter.Release();
         }
     }
 
@@ -128,4 +192,7 @@ public class AiResponse
 
     [JsonPropertyName("rawResponse")]
     public string? RawResponse { get; set; }
+
+    [JsonPropertyName("retryAfter")]
+    public int? RetryAfter { get; set; }
 }

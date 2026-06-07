@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MacawEnglishSchool.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f82f3a05909040c331e6f2fbe5370f0965fa8662")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+167bd226e4bb44b00ec41b29b39ffc680104a762")]
 [assembly: System.Reflection.AssemblyProductAttribute("MacawEnglishSchool.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MacawEnglishSchool.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

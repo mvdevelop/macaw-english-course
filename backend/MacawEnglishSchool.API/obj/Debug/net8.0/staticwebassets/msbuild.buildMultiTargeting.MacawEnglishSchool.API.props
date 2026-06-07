@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\MacawEnglishSchool.API.props" />
-</Project>

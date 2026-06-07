@@ -1,16 +1,36 @@
 const AI_API = "https://macaw-english-course.onrender.com/api/ai/chat";
 
-async function sendToAI(prompt, context = "") {
-  const res = await fetch(AI_API, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ prompt, context }),
-  });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({ error: "Erro de conexão com o servidor" }));
-    throw new Error(err.error || "Falha ao comunicar com a IA");
+async function sendToAI(prompt, context = "", retries = 3) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(AI_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt, context }),
+      });
+
+      if (res.ok) return res.json();
+
+      const err = await res.json().catch(() => ({ error: "Erro de conexão com o servidor" }));
+
+      // 429 — rate limit: espera e tenta novamente
+      if (res.status === 429 && attempt < retries) {
+        const delay = (err.retryAfter || 2) * 1000 * attempt;
+        await new Promise((r) => setTimeout(r, delay));
+        continue;
+      }
+
+      throw new Error(err.error || `Erro ${res.status}: Falha ao comunicar com a IA`);
+    } catch (err) {
+      if (attempt === retries) throw err;
+      // Erro de rede: espera e tenta novamente
+      if (err.message?.includes("Failed to fetch") || err.message?.includes("NetworkError")) {
+        await new Promise((r) => setTimeout(r, 2000 * attempt));
+        continue;
+      }
+      throw err;
+    }
   }
-  return res.json();
 }
 
 /* ── Reading ── */

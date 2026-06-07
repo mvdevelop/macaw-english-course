@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marco\\Programming\\macaw-english-school\\backend\\MacawEnglishSchool.API\\MacawEnglishSchool.API.csproj": {}
+    "C:\\Users\\marco\\Programming\\working-on\\macaw-english-school\\backend\\MacawEnglishSchool.API\\MacawEnglishSchool.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marco\\Programming\\macaw-english-school\\backend\\MacawEnglishSchool.API\\MacawEnglishSchool.API.csproj": {
+    "C:\\Users\\marco\\Programming\\working-on\\macaw-english-school\\backend\\MacawEnglishSchool.API\\MacawEnglishSchool.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marco\\Programming\\macaw-english-school\\backend\\MacawEnglishSchool.API\\MacawEnglishSchool.API.csproj",
+        "projectUniqueName": "C:\\Users\\marco\\Programming\\working-on\\macaw-english-school\\backend\\MacawEnglishSchool.API\\MacawEnglishSchool.API.csproj",
         "projectName": "MacawEnglishSchool.API",
-        "projectPath": "C:\\Users\\marco\\Programming\\macaw-english-school\\backend\\MacawEnglishSchool.API\\MacawEnglishSchool.API.csproj",
+        "projectPath": "C:\\Users\\marco\\Programming\\working-on\\macaw-english-school\\backend\\MacawEnglishSchool.API\\MacawEnglishSchool.API.csproj",
         "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marco\\Programming\\macaw-english-school\\backend\\MacawEnglishSchool.API\\obj\\",
+        "outputPath": "C:\\Users\\marco\\Programming\\working-on\\macaw-english-school\\backend\\MacawEnglishSchool.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -30,6 +30,7 @@
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -43,10 +44,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "BCrypt.Net-Next": {
@@ -89,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.421/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
