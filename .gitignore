@@ -1,4 +1,4 @@
-# .NET
+# ─── .NET ───
 [Bb]in/
 [Oo]bj/
 *.user
@@ -6,16 +6,38 @@
 *.sln.docuser
 *.suo
 *.userprefs
+*.rsuser
 appsettings.Development.json
+*.trx
+TestResults/
 
-# Visual Studio Code
+# ─── Visual Studio Code ───
 .vscode/
 
-# Node (Frontend/Admin)
+# ─── Node ───
 node_modules/
 dist/
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Sensitive Files
+# ─── Sensitive Files ───
 .env
+.env.*
+!.env.example
 *.secrets.json
+
+# ─── TypeScript ───
+*.tsbuildinfo
+
+# ─── OS ───
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── IDE ───
+.idea/
+*.sublime-project
+*.sublime-workspace
