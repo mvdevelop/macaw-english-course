@@ -2,6 +2,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { VideoIcon, SendIcon, CheckCircleIcon, ArrowRightIcon, TrophyIcon, StarIcon } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 import { levelsData } from "../data/levelsData";
 import { podiumData, reviewsData } from "../data/hallOfFameData";
 import SectionTitle from "../components/SectionTitle";
@@ -27,39 +32,60 @@ export default function Page() {
 
     return (
         <>
-            <div id="home" className="flex flex-col items-center justify-center text-center px-4 pb-16 bg-[url('/assets/light-hero-gradient.svg')] dark:bg-[url('/assets/dark-hero-gradient.svg')] bg-no-repeat bg-cover">
-                <div className="flex flex-wrap items-center justify-center gap-3 p-1.5 pr-4 mt-46 rounded-full border border-slate-300 dark:border-slate-600 bg-white/70 dark:bg-slate-600/20">
-                    <div className="flex items-center -space-x-3">
-                        <img className="size-7 rounded-full" height={50} width={50}
-                            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=50"
-                            alt="userImage1" />
-                        <img className="size-7 rounded-full" height={50} width={50}
-                            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=50"
-                            alt="userImage2" />
-                        <img className="size-7 rounded-full" height={50} width={50}
-                            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=50&h=50&auto=format&fit=crop"
-                            alt="userImage3" />
-                    </div>
-                    <p className="text-xs">{t("hero.join")}</p>
-                </div>
-                <h1 className="mt-2 text-5xl/15 md:text-[64px]/19 font-semibold max-w-2xl">
-                    {t("hero.title_start")}{" "}
-                    <span className="bg-gradient-to-r from-primary to-primary-light dark:from-primary-light dark:to-primary-foreground bg-clip-text text-transparent">{t("hero.title_highlight")}</span>
-                </h1>
-                <p className="text-base dark:text-slate-300 max-w-lg mt-2">
-                    {t("hero.subtitle")}
-                </p>
-                <div className="flex items-center gap-4 mt-8">
-                    <button
-                        onClick={() => navigate(user ? "/dashboard" : "/login")}
-                        className="bg-primary hover:bg-primary-dark transition text-white rounded-md px-6 h-11"
+            <div id="home" className="relative h-[80vh] min-h-[580px] overflow-hidden">
+                {/* Background Carousel — começa após a navbar (top-20) */}
+                <div className="absolute top-20 left-0 right-0 bottom-0 z-0">
+                    <Swiper
+                        modules={[Autoplay, Pagination, EffectFade]}
+                        effect="fade"
+                        fadeEffect={{ crossFade: true }}
+                        speed={1500}
+                        autoplay={{ delay: 5000, disableOnInteraction: false }}
+                        pagination={{ clickable: false }}
+                        loop={true}
+                        className="w-full h-full"
                     >
-                        {t("hero.startNow")}
-                    </button>
-                    <button className="flex items-center gap-2 border border-primary-dark transition text-slate-600 dark:text-white rounded-md px-6 h-11">
-                        <VideoIcon strokeWidth={1} />
-                        <span>{t("hero.trialClass")}</span>
-                    </button>
+                        {[
+                            { src: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=2070&auto=format&fit=crop", alt: "Biblioteca - conhecimento e estudo" },
+                            { src: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2070&auto=format&fit=crop", alt: "Dedicacao aos estudos" },
+                            { src: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=2070&auto=format&fit=crop", alt: "Aprendizado online" },
+                            { src: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070&auto=format&fit=crop", alt: "London - Reino Unido" },
+                        ].map((img, i) => (
+                            <SwiperSlide key={i}>
+                                <img
+                                    src={img.src}
+                                    alt={img.alt}
+                                    className="w-full h-full object-cover"
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+
+                {/* Spacer da navbar */}
+                <div className="h-20" />
+
+                {/* Content — centralizado no espaço útil abaixo da navbar */}
+                <div className="h-[calc(100%-80px)] flex flex-col items-center justify-center text-center px-4 relative z-10">
+                    <h1 className="text-5xl/15 md:text-[64px]/19 font-semibold max-w-2xl text-white" style={{textShadow: "0 2px 10px rgba(0,0,0,0.5)"}}>
+                        {t("hero.title_start")}{" "}
+                        <span className="text-primary" style={{textShadow: "0 2px 10px rgba(0,0,0,0.5)"}}>{t("hero.title_highlight")}</span>
+                    </h1>
+                    <p className="text-base text-white/90 max-w-lg mt-2" style={{textShadow: "0 1px 6px rgba(0,0,0,0.5)"}}>
+                        {t("hero.subtitle")}
+                    </p>
+                    <div className="flex items-center gap-4 mt-8 justify-center">
+                        <button
+                            onClick={() => navigate(user ? "/dashboard" : "/login")}
+                            className="bg-primary hover:bg-primary-dark transition text-white rounded-md px-6 h-11 shadow-lg shadow-primary/25"
+                        >
+                            {t("hero.startNow")}
+                        </button>
+                        <button className="flex items-center gap-2 border border-white/30 hover:border-white/50 transition text-white rounded-md px-6 h-11 backdrop-blur-sm bg-white/10">
+                            <VideoIcon strokeWidth={1} />
+                            <span>{t("hero.trialClass")}</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
