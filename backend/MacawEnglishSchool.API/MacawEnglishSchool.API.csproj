@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="MacawEnglishSchool.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.27" />
     <PackageReference Include="MongoDB.Bson" Version="3.9.0" />

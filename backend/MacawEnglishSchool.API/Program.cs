@@ -75,3 +75,6 @@ app.MapControllers();
 
 app.Run();
 
+// Make Program accessible to the test project
+public partial class Program { }
+
