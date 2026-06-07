@@ -48,10 +48,10 @@ export default function Page() {
                         className="w-full h-full"
                     >
                         {[
-                            { src: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=2070&auto=format&fit=crop", alt: "Biblioteca - conhecimento e estudo" },
-                            { src: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2070&auto=format&fit=crop", alt: "Dedicacao aos estudos" },
-                            { src: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=2070&auto=format&fit=crop", alt: "Aprendizado online" },
-                            { src: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070&auto=format&fit=crop", alt: "London - Reino Unido" },
+                            { src: "https://images.unsplash.com/photo-1534430480872-3498386e7856?q=80&w=2070&auto=format&fit=crop", alt: "Estátua da Liberdade - Nova York, EUA" },
+                            { src: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070&auto=format&fit=crop", alt: "London Eye - Londres, Reino Unido" },
+                            { src: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop", alt: "Torre Eiffel - Paris, Europa" },
+                            { src: "https://images.unsplash.com/photo-1566837945700-30057527ade0?q=80&w=2070&auto=format&fit=crop", alt: "Veneza - Itália, Europa" },
                         ].map((img, i) => (
                             <SwiperSlide key={i}>
                                 <img
@@ -69,6 +69,11 @@ export default function Page() {
 
                 {/* Content — centralizado no espaço útil abaixo da navbar */}
                 <div className="h-[calc(100%-80px)] flex flex-col items-center justify-center text-center px-4 relative z-10">
+                    <div className="mb-3">
+                        <p className="text-base md:text-lg font-medium text-white/70 tracking-wide" style={{textShadow: "0 1px 6px rgba(0,0,0,0.5)"}}>
+                            Welcome to Macaw English School
+                        </p>
+                    </div>
                     <h1 className="text-5xl/15 md:text-[64px]/19 font-semibold max-w-2xl text-white" style={{textShadow: "0 2px 10px rgba(0,0,0,0.5)"}}>
                         {t("hero.title_start")}{" "}
                         <span className="text-primary" style={{textShadow: "0 2px 10px rgba(0,0,0,0.5)"}}>{t("hero.title_highlight")}</span>
