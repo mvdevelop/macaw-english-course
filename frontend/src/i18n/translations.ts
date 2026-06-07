@@ -1,4 +1,6 @@
-export const translations = {
+import type { Lang, TranslationDict } from "../types";
+
+export const translations: Record<Lang, TranslationDict> = {
   pt: {
     // Navbar
     "nav.home": "Home",

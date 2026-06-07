@@ -1,4 +1,6 @@
-export const companiesLogo = [
+import type { CompanyLogo } from '../types';
+
+export const companiesLogo: CompanyLogo[] = [
     {
         name: "Framer",
         logo: "/assets/companies-logo/framer.svg",

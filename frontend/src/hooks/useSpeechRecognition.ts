@@ -1,31 +1,32 @@
 import { useState, useCallback, useRef } from "react";
+import type { SpeechStatus, SpeechRecognitionReturn } from "../types";
 
 /**
  * Hook para reconhecimento de fala (Speech-to-Text) usando Web Speech API.
  * Suporta português e inglês.
  */
-export function useSpeechRecognition() {
-  const [status, setStatus] = useState("idle"); // idle | listening | processing | done | error
-  const [transcript, setTranscript] = useState("");
-  const [interimTranscript, setInterimTranscript] = useState("");
-  const [error, setError] = useState(null);
-  const recognitionRef = useRef(null);
+export function useSpeechRecognition(): SpeechRecognitionReturn {
+  const [status, setStatus] = useState<SpeechStatus>("idle");
+  const [transcript, setTranscript] = useState<string>("");
+  const [interimTranscript, setInterimTranscript] = useState<string>("");
+  const [error, setError] = useState<string | null>(null);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   const isSupported =
     typeof window !== "undefined" &&
     (!!window.SpeechRecognition || !!window.webkitSpeechRecognition);
 
   const startListening = useCallback(
-    (lang = "en-US") => {
+    (lang: string = "en-US") => {
       if (!isSupported) {
         setError("Seu navegador não suporta reconhecimento de fala. Tente Chrome ou Edge.");
         setStatus("error");
         return;
       }
 
-      const SpeechRecognition =
+      const SpeechRecognitionConstructor =
         window.SpeechRecognition || window.webkitSpeechRecognition;
-      const recognition = new SpeechRecognition();
+      const recognition = new SpeechRecognitionConstructor();
       recognition.continuous = false;
       recognition.interimResults = true;
       recognition.lang = lang;
@@ -37,7 +38,7 @@ export function useSpeechRecognition() {
         setInterimTranscript("");
       };
 
-      recognition.onresult = (event) => {
+      recognition.onresult = (event: SpeechRecognitionEvent) => {
         let final = "";
         let interim = "";
         for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -51,7 +52,7 @@ export function useSpeechRecognition() {
         setInterimTranscript(interim);
       };
 
-      recognition.onerror = (event) => {
+      recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
         setError(`Erro: ${event.error}`);
         setStatus("error");
       };

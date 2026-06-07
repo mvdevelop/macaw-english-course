@@ -1,17 +1,18 @@
 import { useState, useCallback, useRef } from "react";
+import type { SpeechSynthesisReturn, SpeechOptions } from "../types";
 
 /**
  * Hook para síntese de fala (Text-to-Speech) usando Web Speech API.
  * Permite falar textos em vários idiomas com controle de velocidade.
  */
-export function useSpeechSynthesis() {
-  const [speaking, setSpeaking] = useState(false);
-  const [supported, setSupported] = useState(
+export function useSpeechSynthesis(): SpeechSynthesisReturn {
+  const [speaking, setSpeaking] = useState<boolean>(false);
+  const [supported, setSupported] = useState<boolean>(
     typeof window !== "undefined" && !!window.speechSynthesis
   );
-  const utteranceRef = useRef(null);
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
-  const speak = useCallback((text, options = {}) => {
+  const speak = useCallback((text: string, options: SpeechOptions = {}) => {
     const { lang = "en-US", rate = 0.9, pitch = 1, voice = null } = options;
 
     if (!window.speechSynthesis) {
@@ -66,7 +67,7 @@ export function useSpeechSynthesis() {
     }
   }, [speaking]);
 
-  const getVoices = useCallback((lang) => {
+  const getVoices = useCallback((lang?: string): SpeechSynthesisVoice[] => {
     if (!window.speechSynthesis) return [];
     const voices = window.speechSynthesis.getVoices();
     if (lang) return voices.filter((v) => v.lang.startsWith(lang));

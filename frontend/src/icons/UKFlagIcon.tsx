@@ -1,4 +1,8 @@
-export default function UKFlagIcon({ className = "size-5" }) {
+interface Props {
+  className?: string;
+}
+
+export default function UKFlagIcon({ className = "size-5" }: Props) {
   return (
     <svg className={className} viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
       <rect width="60" height="40" rx="3" fill="#012169"/>

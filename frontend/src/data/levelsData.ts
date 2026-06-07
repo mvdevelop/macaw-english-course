@@ -1,12 +1,14 @@
+import type { LevelData } from '../types';
+import type { LucideIcon } from 'lucide-react';
 import { BookOpenIcon, MessageCircleIcon, BookMarkedIcon, MicIcon, GraduationCapIcon, TrophyIcon } from "lucide-react";
 
-export const levelsData = [
+export const levelsData: LevelData[] = [
     {
         code: "a1",
         label: "A1",
         name: "Beginner",
         color: "from-green-400 to-green-600",
-        icon: BookOpenIcon,
+        icon: BookOpenIcon as LucideIcon,
         description_key: "level.a1.desc",
         topics_key: "level.a1.topics",
     },
@@ -15,7 +17,7 @@ export const levelsData = [
         label: "A2",
         name: "Elementary",
         color: "from-blue-400 to-blue-600",
-        icon: MessageCircleIcon,
+        icon: MessageCircleIcon as LucideIcon,
         description_key: "level.a2.desc",
         topics_key: "level.a2.topics",
     },
@@ -24,7 +26,7 @@ export const levelsData = [
         label: "B1",
         name: "Intermediate",
         color: "from-purple-400 to-purple-600",
-        icon: BookMarkedIcon,
+        icon: BookMarkedIcon as LucideIcon,
         description_key: "level.b1.desc",
         topics_key: "level.b1.topics",
     },
@@ -33,7 +35,7 @@ export const levelsData = [
         label: "B2",
         name: "Upper Intermediate",
         color: "from-orange-400 to-orange-600",
-        icon: MicIcon,
+        icon: MicIcon as LucideIcon,
         description_key: "level.b2.desc",
         topics_key: "level.b2.topics",
     },
@@ -42,7 +44,7 @@ export const levelsData = [
         label: "C1",
         name: "Advanced",
         color: "from-red-400 to-red-600",
-        icon: GraduationCapIcon,
+        icon: GraduationCapIcon as LucideIcon,
         description_key: "level.c1.desc",
         topics_key: "level.c1.topics",
     },
@@ -51,7 +53,7 @@ export const levelsData = [
         label: "C2",
         name: "Proficiency",
         color: "from-pink-400 to-pink-600",
-        icon: TrophyIcon,
+        icon: TrophyIcon as LucideIcon,
         description_key: "level.c2.desc",
         topics_key: "level.c2.topics",
     },

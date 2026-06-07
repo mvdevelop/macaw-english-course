@@ -1,11 +1,17 @@
 /**
- * Tests for courseApi.js
+ * Tests for courseApi.ts
  *
  * Uses global fetch mocking to test API call functions.
  */
 
-// Mock the API module so we can test it as plain functions
-// We don't mock fetch here - we create a real mock of it
+import {
+  getLessonsByLevel,
+  getLessonById,
+  getTestByModule,
+  submitTestResult,
+  getProgress,
+  completeLesson,
+} from "../courseApi";
 
 const mockLesson = {
   _id: "lesson-1",
@@ -37,9 +43,8 @@ describe("courseApi", () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: true,
         json: () => Promise.resolve(mockData),
-      });
+      } as unknown as Response);
 
-      const { getLessonsByLevel } = await import("../courseApi");
       const result = await getLessonsByLevel("A1");
 
       expect(result).toEqual(mockData);
@@ -51,9 +56,8 @@ describe("courseApi", () => {
     it("returns empty array when API responds with error", async () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: false,
-      });
+      } as unknown as Response);
 
-      const { getLessonsByLevel } = await import("../courseApi");
       const result = await getLessonsByLevel("A1");
 
       expect(result).toEqual([]);
@@ -65,9 +69,8 @@ describe("courseApi", () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: true,
         json: () => Promise.resolve(mockLesson),
-      });
+      } as unknown as Response);
 
-      const { getLessonById } = await import("../courseApi");
       const result = await getLessonById("lesson-1");
 
       expect(result).toEqual(mockLesson);
@@ -76,9 +79,8 @@ describe("courseApi", () => {
     it("returns null when lesson not found", async () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: false,
-      });
+      } as unknown as Response);
 
-      const { getLessonById } = await import("../courseApi");
       const result = await getLessonById("non-existent");
 
       expect(result).toBeNull();
@@ -90,9 +92,8 @@ describe("courseApi", () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: true,
         json: () => Promise.resolve(mockTest),
-      });
+      } as unknown as Response);
 
-      const { getTestByModule } = await import("../courseApi");
       const result = await getTestByModule("module-1");
 
       expect(result).toEqual(mockTest);
@@ -101,9 +102,8 @@ describe("courseApi", () => {
     it("returns null when test not found", async () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: false,
-      });
+      } as unknown as Response);
 
-      const { getTestByModule } = await import("../courseApi");
       const result = await getTestByModule("non-existent");
 
       expect(result).toBeNull();
@@ -116,9 +116,8 @@ describe("courseApi", () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: true,
         json: () => Promise.resolve(resultData),
-      });
+      } as unknown as Response);
 
-      const { submitTestResult } = await import("../courseApi");
       const result = await submitTestResult({ studentId: "s1", score: 85 });
 
       expect(result).toEqual(resultData);
@@ -135,9 +134,8 @@ describe("courseApi", () => {
     it("throws error on failed submission", async () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: false,
-      });
+      } as unknown as Response);
 
-      const { submitTestResult } = await import("../courseApi");
       await expect(submitTestResult({})).rejects.toThrow("Failed to submit test");
     });
   });
@@ -148,9 +146,8 @@ describe("courseApi", () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: true,
         json: () => Promise.resolve(progressData),
-      });
+      } as unknown as Response);
 
-      const { getProgress } = await import("../courseApi");
       const result = await getProgress("s1");
 
       expect(result).toEqual(progressData);
@@ -159,9 +156,8 @@ describe("courseApi", () => {
     it("returns empty array on error", async () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: false,
-      });
+      } as unknown as Response);
 
-      const { getProgress } = await import("../courseApi");
       const result = await getProgress("s1");
 
       expect(result).toEqual([]);
@@ -174,9 +170,8 @@ describe("courseApi", () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: true,
         json: () => Promise.resolve(responseData),
-      });
+      } as unknown as Response);
 
-      const { completeLesson } = await import("../courseApi");
       const result = await completeLesson("s1", "A1", "lesson-1", 8, 10);
 
       expect(result).toEqual(responseData);
@@ -185,9 +180,8 @@ describe("courseApi", () => {
     it("throws error on failure", async () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: false,
-      });
+      } as unknown as Response);
 
-      const { completeLesson } = await import("../courseApi");
       await expect(completeLesson("s1", "A1", "lesson-1", 8, 10)).rejects.toThrow(
         "Failed to complete lesson"
       );

@@ -1,8 +1,10 @@
-const avatar = (name) =>
+import type { StatsData, PodiumEntry, LeaderboardEntry, WeeklyActivity, Badge, Review } from '../types';
+
+const avatar = (name: string) =>
   `https://api.dicebear.com/9.x/adventurer/png?seed=${encodeURIComponent(name)}&size=128&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf`;
 
 /* ── Estatísticas gerais ── */
-export const statsData = {
+export const statsData: StatsData = {
   totalStudents: 5247,
   lessonsCompleted: 38420,
   avgXP: 2850,
@@ -10,7 +12,7 @@ export const statsData = {
 };
 
 /* ── Pódio Top 3 ── */
-export const podiumData = [
+export const podiumData: PodiumEntry[] = [
   {
     name: "Lucas Mendes",
     level: "C1",
@@ -41,7 +43,7 @@ export const podiumData = [
 ];
 
 /* ── Leaderboard (Top 10) ── */
-export const leaderboardData = [
+export const leaderboardData: LeaderboardEntry[] = [
   { rank: 1, name: "Lucas Mendes", level: "C1", xp: 9850, progress: 98, avatar: avatar("Lucas Mendes") },
   { rank: 2, name: "Pedro Santos", level: "C2", xp: 9780, progress: 97, avatar: avatar("Pedro Santos") },
   { rank: 3, name: "Ana Carolina", level: "B2", xp: 9520, progress: 95, avatar: avatar("Ana Carolina") },
@@ -55,7 +57,7 @@ export const leaderboardData = [
 ];
 
 /* ── Dados para o gráfico semanal ── */
-export const weeklyActivityData = [
+export const weeklyActivityData: WeeklyActivity[] = [
   { day: "Seg", aulas: 12, exercicios: 8 },
   { day: "Ter", aulas: 18, exercicios: 12 },
   { day: "Qua", aulas: 15, exercicios: 10 },
@@ -66,7 +68,7 @@ export const weeklyActivityData = [
 ];
 
 /* ── Emblemas / Conquistas ── */
-export const badges = [
+export const badges: Badge[] = [
   { name: "Foguete", emoji: "🚀", desc: "Completou 10 aulas em um dia" },
   { name: "Fogo", emoji: "🔥", desc: "30 dias de streak" },
   { name: "Cérebro", emoji: "🧠", desc: "Acertou 100% num teste" },
@@ -75,7 +77,7 @@ export const badges = [
 ];
 
 /* ── Reviews originais ── */
-export const reviewsData = [
+export const reviewsData: Review[] = [
   {
     name: "Mariana Oliveira",
     level: "B1 → B2",

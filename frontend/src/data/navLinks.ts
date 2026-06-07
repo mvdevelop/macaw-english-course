@@ -1,4 +1,6 @@
-export const navLinks = [
+import type { NavLink } from '../types';
+
+export const navLinks: NavLink[] = [
     {
         name: "nav.home",
         href: "/",

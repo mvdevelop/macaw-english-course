@@ -1,4 +1,6 @@
-export const faqsData = [
+import type { FaqItem } from '../types';
+
+export const faqsData: FaqItem[] = [
     {
         question: "faq.1.question",
         answer: "faq.1.answer",

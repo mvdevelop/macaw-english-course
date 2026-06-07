@@ -2,17 +2,26 @@ import { useState } from "react";
 import { Languages, CheckIcon, ChevronDownIcon } from "lucide-react";
 import { useTranslation } from "../i18n/LanguageContext";
 
-const languages = [
+interface LanguageOption {
+  code: string;
+  flag: string;
+}
+
+const languages: LanguageOption[] = [
   { code: "pt", flag: "🇧🇷" },
   { code: "en", flag: "🇬🇧" },
   { code: "es", flag: "🇪🇸" },
 ];
 
-export default function LanguageSelector({ variant = "desktop" }) {
+interface LanguageSelectorProps {
+  variant?: "desktop" | "mobile";
+}
+
+export default function LanguageSelector({ variant = "desktop" }: LanguageSelectorProps) {
   const { lang, setLang, t } = useTranslation();
   const [open, setOpen] = useState(false);
 
-  const currentLang = languages.find((l) => l.code === lang);
+  const currentLang: LanguageOption | undefined = languages.find((l) => l.code === lang);
 
   if (variant === "mobile") {
     return (

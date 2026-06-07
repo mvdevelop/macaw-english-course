@@ -1,13 +1,13 @@
 export default {
   testEnvironment: "jsdom",
-  setupFiles: ["<rootDir>/src/jest.setup.js"],
+  setupFiles: ["<rootDir>/src/jest.setup.ts"],
   moduleNameMapper: {
     // Mock CSS/Style imports
-    "\\.(css|less|scss|sass)$": "<rootDir>/src/__mocks__/styleMock.js",
-    "^swiper/css.*$": "<rootDir>/src/__mocks__/styleMock.js",
-    "^swiper/modules.*$": "<rootDir>/src/__mocks__/swiperModulesMock.js",
+    "\\.(css|less|scss|sass)$": "<rootDir>/src/__mocks__/styleMock.ts",
+    "^swiper/css.*$": "<rootDir>/src/__mocks__/styleMock.ts",
+    "^swiper/modules.*$": "<rootDir>/src/__mocks__/swiperModulesMock.ts",
     // Mock file imports (images, fonts)
-    "\\.(jpg|jpeg|png|gif|webp|svg|ico)$": "<rootDir>/src/__mocks__/fileMock.js",
+    "\\.(jpg|jpeg|png|gif|webp|svg|ico)$": "<rootDir>/src/__mocks__/fileMock.ts",
   },
   transform: {
     "^.+\\.(js|jsx|ts|tsx|mjs)$": "babel-jest",
@@ -15,11 +15,11 @@ export default {
   transformIgnorePatterns: [
     "/node_modules/(?!(lucide-react|framer-motion|lenis|react-fast-marquee|swiper|recharts)/)",
   ],
-  moduleFileExtensions: ["js", "jsx", "json", "node"],
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   testPathIgnorePatterns: ["/node_modules/", "/dist/"],
   collectCoverageFrom: [
-    "src/**/*.{js,jsx}",
-    "!src/main.jsx",
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!src/main.tsx",
     "!src/index.css",
     "!src/**/*.data.*",
     "!src/icons/**",

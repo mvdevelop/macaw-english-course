@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import type { AuthContextType, User, LoginResponse } from "../types";
 
 const API_URL = "https://macaw-english-course.onrender.com/api/auth";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext<AuthContextType | null>(null);
 
-export function AuthContextProvider({ children }) {
-    const [user, setUser] = useState(null);
+export function AuthContextProvider({ children }: { children: React.ReactNode }) {
+    const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -16,7 +17,7 @@ export function AuthContextProvider({ children }) {
         setLoading(false);
     }, []);
 
-    async function login(email, password) {
+    async function login(email: string, password: string): Promise<LoginResponse> {
         const res = await fetch(`${API_URL}/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -32,7 +33,7 @@ export function AuthContextProvider({ children }) {
         return data;
     }
 
-    async function signup(name, email, password) {
+    async function signup(name: string, email: string, password: string): Promise<LoginResponse> {
         const res = await fetch(`${API_URL}/signup`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -60,6 +61,6 @@ export function AuthContextProvider({ children }) {
     );
 }
 
-export function useAuth() {
-    return useContext(AuthContext);
+export function useAuth(): AuthContextType {
+    return useContext(AuthContext)!;
 }

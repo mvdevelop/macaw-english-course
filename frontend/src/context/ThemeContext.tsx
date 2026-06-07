@@ -1,9 +1,10 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
+import type { ThemeContextType } from "../types";
 
-export const ThemeContext = createContext();
+export const ThemeContext = createContext<ThemeContextType | null>(null);
 
-export function ThemeContextProvider({ children }) {
+export function ThemeContextProvider({ children }: { children: React.ReactNode }) {
     const [theme, setTheme] = useState("light");
 
     useEffect(() => {
@@ -26,6 +27,6 @@ export function ThemeContextProvider({ children }) {
     );
 }
 
-export function useThemeContext() {
-    return useContext(ThemeContext);
+export function useThemeContext(): ThemeContextType {
+    return useContext(ThemeContext)!;
 }

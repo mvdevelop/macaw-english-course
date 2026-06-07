@@ -1,8 +1,19 @@
+import type {
+  ReadingExercise,
+  SpeakingTopic,
+  ListeningExercise,
+  WritingPrompt,
+  SpeakingEvaluation,
+  WritingEvaluation,
+  MockData,
+  AiResponse,
+} from "../types";
+
 const AI_API = "https://macaw-english-course.onrender.com/api/ai/chat";
 const USE_MOCK = false; // Mude para true para testar sem API
 
 /* ── Dados mock para fallback quando a IA estiver fora ── */
-const MOCK_DATA = {
+const MOCK_DATA: MockData = {
   reading: {
     title: "My Daily Routine",
     text: "Every morning, I wake up at 7 o'clock. I brush my teeth and take a shower. Then I have breakfast with my family. I usually eat bread and drink milk. After breakfast, I go to school. I study English, Math, and Science. In the afternoon, I do my homework and play with my friends.",
@@ -35,7 +46,7 @@ const MOCK_DATA = {
 };
 
 /* ── Avaliação mock ── */
-const MOCK_EVALUATION = {
+const MOCK_EVALUATION: SpeakingEvaluation & { overallFeedback: string } = {
   score: 75,
   grammar: "Good use of basic tenses. Try using more complex sentence structures.",
   vocabulary: "Adequate vocabulary. Consider learning more descriptive words.",
@@ -45,7 +56,7 @@ const MOCK_EVALUATION = {
   overallFeedback: "Muito bom! Continue praticando que você vai longe! 🚀",
 };
 
-async function sendToAI(prompt, context = "", retries = 3) {
+async function sendToAI(prompt: string, context: string = "", retries: number = 3): Promise<AiResponse> {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       const res = await fetch(AI_API, {
@@ -69,17 +80,19 @@ async function sendToAI(prompt, context = "", retries = 3) {
     } catch (err) {
       if (attempt === retries) throw err;
       // Erro de rede: espera e tenta novamente
-      if (err.message?.includes("Failed to fetch") || err.message?.includes("NetworkError")) {
+      if (err instanceof Error && (err.message?.includes("Failed to fetch") || err.message?.includes("NetworkError"))) {
         await new Promise((r) => setTimeout(r, 2000 * attempt));
         continue;
       }
       throw err;
     }
   }
+  // This should never be reached but satisfies TypeScript
+  throw new Error("All retries exhausted");
 }
 
 /* ── Reading ── */
-export async function generateReadingExercise(level = "intermediário") {
+export async function generateReadingExercise(level: string = "intermediário"): Promise<ReadingExercise> {
   if (USE_MOCK) return MOCK_DATA.reading;
   try {
     const prompt = `Generate a short English reading exercise for a ${level} learner.
@@ -95,27 +108,27 @@ Return the response in this exact JSON structure (no markdown, no backticks):
   ]
 }`;
     const res = await sendToAI(prompt);
-    return parseJsonFromResponse(res.text) || MOCK_DATA.reading;
+    return parseJsonFromResponse<ReadingExercise>(res.text) || MOCK_DATA.reading;
   } catch {
     return MOCK_DATA.reading;
   }
 }
 
 /* ── Speaking ── */
-export async function generateSpeakingTopic(level = "intermediário") {
+export async function generateSpeakingTopic(level: string = "intermediário"): Promise<SpeakingTopic> {
   if (USE_MOCK) return MOCK_DATA.speaking;
   try {
     const prompt = `Suggest ONE conversation topic for a ${level} English learner to practice speaking.
 Return ONLY a JSON object (no markdown):
 {"topic": "the topic in English", "questions": ["follow-up question 1", "follow-up question 2", "follow-up question 3"], "vocabulary": ["word1", "word2", "word3"]}`;
     const res = await sendToAI(prompt);
-    return parseJsonFromResponse(res.text) || MOCK_DATA.speaking;
+    return parseJsonFromResponse<SpeakingTopic>(res.text) || MOCK_DATA.speaking;
   } catch {
     return MOCK_DATA.speaking;
   }
 }
 
-export async function evaluateSpeaking(transcript, topic) {
+export async function evaluateSpeaking(transcript: string, topic: string): Promise<SpeakingEvaluation> {
   if (USE_MOCK) return { ...MOCK_EVALUATION, grammar: `Good attempt on "${topic}". ${MOCK_EVALUATION.grammar}` };
   try {
     const prompt = `Evaluate this English speech response about "${topic}".
@@ -132,14 +145,14 @@ Return ONLY a JSON object (no markdown):
   "correctedVersion": "a corrected version of what the student tried to say"
 }`;
     const res = await sendToAI(prompt);
-    return parseJsonFromResponse(res.text) || { ...MOCK_EVALUATION, grammar: `Good attempt on "${topic}". ${MOCK_EVALUATION.grammar}` };
+    return parseJsonFromResponse<SpeakingEvaluation>(res.text) || { ...MOCK_EVALUATION, grammar: `Good attempt on "${topic}". ${MOCK_EVALUATION.grammar}` };
   } catch {
     return { ...MOCK_EVALUATION, grammar: `Good attempt on "${topic}". ${MOCK_EVALUATION.grammar}` };
   }
 }
 
 /* ── Listening ── */
-export async function generateListeningExercise(level = "intermediário") {
+export async function generateListeningExercise(level: string = "intermediário"): Promise<ListeningExercise> {
   if (USE_MOCK) return MOCK_DATA.listening;
   try {
     const prompt = `Create a short English listening exercise for a ${level} learner.
@@ -155,14 +168,14 @@ Return ONLY a JSON object (no markdown):
   ]
 }`;
     const res = await sendToAI(prompt);
-    return parseJsonFromResponse(res.text) || MOCK_DATA.listening;
+    return parseJsonFromResponse<ListeningExercise>(res.text) || MOCK_DATA.listening;
   } catch {
     return MOCK_DATA.listening;
   }
 }
 
 /* ── Writing ── */
-export async function generateWritingPrompt(level = "intermediário") {
+export async function generateWritingPrompt(level: string = "intermediário"): Promise<WritingPrompt> {
   if (USE_MOCK) return MOCK_DATA.writing;
   try {
     const prompt = `Create a writing prompt for a ${level} English learner.
@@ -174,14 +187,14 @@ Return ONLY a JSON object (no markdown):
   "tips": ["quick tip 1", "quick tip 2", "quick tip 3"]
 }`;
     const res = await sendToAI(prompt);
-    return parseJsonFromResponse(res.text) || MOCK_DATA.writing;
+    return parseJsonFromResponse<WritingPrompt>(res.text) || MOCK_DATA.writing;
   } catch {
     return MOCK_DATA.writing;
   }
 }
 
-export async function evaluateWriting(text, promptText) {
-  if (USE_MOCK) return MOCK_EVALUATION;
+export async function evaluateWriting(text: string, promptText: string): Promise<WritingEvaluation> {
+  if (USE_MOCK) return MOCK_EVALUATION as unknown as WritingEvaluation;
   try {
     const evaluationPrompt = `Evaluate this English writing for the prompt: "${promptText}"
 
@@ -198,33 +211,37 @@ Return ONLY a JSON object (no markdown):
   "overallFeedback": "general feedback and encouragement in Portuguese"
 }`;
     const res = await sendToAI(evaluationPrompt);
-    return parseJsonFromResponse(res.text) || MOCK_EVALUATION;
+    return parseJsonFromResponse<WritingEvaluation>(res.text) || (MOCK_EVALUATION as unknown as WritingEvaluation);
   } catch {
-    return MOCK_EVALUATION;
+    return MOCK_EVALUATION as unknown as WritingEvaluation;
   }
 }
 
 /* ── Helper ── */
-function parseJsonFromResponse(text) {
+function parseJsonFromResponse<T>(text: string | undefined): T | null {
   if (!text) return null;
   try {
     // Try direct parse first
-    return JSON.parse(text);
+    return JSON.parse(text) as T;
   } catch {
     // Try to extract JSON from markdown code blocks
     const jsonMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
     if (jsonMatch) {
       try {
-        return JSON.parse(jsonMatch[1].trim());
-      } catch {}
+        return JSON.parse(jsonMatch[1].trim()) as T;
+      } catch {
+        // fall through
+      }
     }
     // Try to find { } pattern
     const braceMatch = text.match(/{[\s\S]*}/);
     if (braceMatch) {
       try {
-        return JSON.parse(braceMatch[0]);
-      } catch {}
+        return JSON.parse(braceMatch[0]) as T;
+      } catch {
+        // fall through
+      }
     }
-    return { error: "Failed to parse AI response", raw: text };
+    return null;
   }
 }
