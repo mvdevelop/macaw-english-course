@@ -11,6 +11,7 @@ import LessonViewer from "./pages/LessonViewer"
 import TestPage from "./pages/TestPage"
 import DashboardLayout from "./pages/dashboard/DashboardLayout"
 import DashboardHome from "./pages/dashboard/DashboardHome"
+import AIPractice from "./pages/dashboard/AIPractice"
 import { useAuth } from "./context/AuthContext"
 import { Navigate } from "react-router-dom"
 
@@ -52,6 +53,7 @@ export default function App() {
             {/* Protected dashboard routes */}
             <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
                 <Route index element={<DashboardHome />} />
+                <Route path="ai-practice" element={<AIPractice />} />
             </Route>
 
             {/* Protected course routes (no navbar/footer) */}

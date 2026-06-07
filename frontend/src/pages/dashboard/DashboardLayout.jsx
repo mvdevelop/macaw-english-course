@@ -10,11 +10,14 @@ import {
     XIcon,
     UserIcon,
     GraduationCapIcon,
+    SparklesIcon,
 } from "lucide-react";
+import ThemeToggle from "../../components/ThemeToggle";
 
 const sidebarLinks = [
     { icon: LayoutDashboardIcon, label: "Dashboard", href: "/dashboard" },
     { icon: BookOpenIcon, label: "Meus Cursos", href: "/my-courses" },
+    { icon: SparklesIcon, label: "AI Practice", href: "/dashboard/ai-practice" },
     { icon: GraduationCapIcon, label: "Certificados", href: "/dashboard/certificados" },
     { icon: UserIcon, label: "Perfil", href: "/dashboard/perfil" },
     { icon: SettingsIcon, label: "Configurações", href: "/dashboard/configuracoes" },
@@ -47,17 +50,20 @@ export default function DashboardLayout() {
                     mobileOpen ? "translate-x-0" : "-translate-x-full"
                 } md:translate-x-0`}
             >
-                {/* Logo */}
+                {/* Logo + ThemeToggle */}
                 <div className="flex items-center justify-between px-6 py-5 border-b border-slate-200 dark:border-slate-800">
                     <Link to="/" className="text-xl font-bold text-primary">
                         Macaw
                     </Link>
-                    <button
-                        className="md:hidden text-slate-400"
-                        onClick={() => setMobileOpen(false)}
-                    >
-                        <XIcon size={24} />
-                    </button>
+                    <div className="flex items-center gap-2">
+                        <ThemeToggle />
+                        <button
+                            className="md:hidden text-slate-400"
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            <XIcon size={24} />
+                        </button>
+                    </div>
                 </div>
 
                 {/* Nav links */}

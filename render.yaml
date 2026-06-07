@@ -9,6 +9,8 @@ services:
         sync: false
       - key: MongoDb__DatabaseName
         value: macaw_english_school
+      - key: Gemini__ApiKey
+        sync: false
       - key: ASPNETCORE_URLS
         value: http://+:8080
     docker:

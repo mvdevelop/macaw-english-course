@@ -26,6 +26,7 @@ if (string.IsNullOrWhiteSpace(mongoDbSettings.DatabaseName))
 
 builder.Services.AddSingleton(mongoDbSettings);
 builder.Services.AddSingleton<MongoDbService>();
+builder.Services.AddHttpClient();
 
 // Register Repositories
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
