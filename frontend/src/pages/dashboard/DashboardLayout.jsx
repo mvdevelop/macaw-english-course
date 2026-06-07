@@ -9,8 +9,8 @@ import {
     MenuIcon,
     XIcon,
     UserIcon,
-    GraduationCapIcon,
     SparklesIcon,
+    MessageCircleIcon,
 } from "lucide-react";
 import ThemeToggle from "../../components/ThemeToggle";
 
@@ -18,7 +18,7 @@ const sidebarLinks = [
     { icon: LayoutDashboardIcon, label: "Dashboard", href: "/dashboard" },
     { icon: BookOpenIcon, label: "Meus Cursos", href: "/my-courses" },
     { icon: SparklesIcon, label: "AI Practice", href: "/dashboard/ai-practice" },
-    { icon: GraduationCapIcon, label: "Certificados", href: "/dashboard/certificados" },
+    { icon: MessageCircleIcon, label: "Mensagens", href: "/dashboard/chat" },
     { icon: UserIcon, label: "Perfil", href: "/dashboard/perfil" },
     { icon: SettingsIcon, label: "Configurações", href: "/dashboard/configuracoes" },
 ];

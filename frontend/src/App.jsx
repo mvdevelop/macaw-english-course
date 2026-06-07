@@ -12,6 +12,9 @@ import TestPage from "./pages/TestPage"
 import DashboardLayout from "./pages/dashboard/DashboardLayout"
 import DashboardHome from "./pages/dashboard/DashboardHome"
 import AIPractice from "./pages/dashboard/AIPractice"
+import Profile from "./pages/dashboard/Profile"
+import Configuracoes from "./pages/dashboard/Configuracoes"
+import Chat from "./pages/dashboard/Chat"
 import { useAuth } from "./context/AuthContext"
 import { Navigate } from "react-router-dom"
 
@@ -54,6 +57,9 @@ export default function App() {
             <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
                 <Route index element={<DashboardHome />} />
                 <Route path="ai-practice" element={<AIPractice />} />
+                <Route path="perfil" element={<Profile />} />
+                <Route path="configuracoes" element={<Configuracoes />} />
+                <Route path="chat" element={<Chat />} />
             </Route>
 
             {/* Protected course routes (no navbar/footer) */}

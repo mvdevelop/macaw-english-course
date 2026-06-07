@@ -17,10 +17,10 @@ export default function MyCourses() {
         <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-brand-dark">
             <div className="flex-1 p-6 lg:p-10 max-w-5xl mx-auto w-full">
                 <button
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/dashboard")}
                     className="flex items-center gap-2 text-sm text-slate-400 hover:text-primary mb-6 transition"
                 >
-                    <ArrowLeftIcon size={16} /> Voltar ao início
+                    <ArrowLeftIcon size={16} /> Voltar ao Dashboard
                 </button>
                 <div className="mb-8">
                     <h1 className="text-2xl font-semibold">Meus Cursos</h1>

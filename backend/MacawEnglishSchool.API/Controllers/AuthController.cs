@@ -55,6 +55,40 @@ public class AuthController : ControllerBase
             Message = "Login successful"
         });
     }
+
+    [HttpGet("user/{id}")]
+    public async Task<ActionResult<User>> GetUser(string id)
+    {
+        var user = await _userRepository.GetByIdAsync(id);
+        if (user == null) return NotFound("User not found");
+        return Ok(new LoginResponse
+        {
+            Id = user.Id,
+            Name = user.Name,
+            Email = user.Email,
+            Message = "User found"
+        });
+    }
+
+    [HttpPut("user/{id}")]
+    public async Task<IActionResult> UpdateUser(string id, [FromBody] UpdateUserRequest request)
+    {
+        var user = await _userRepository.GetByIdAsync(id);
+        if (user == null) return NotFound("User not found");
+
+        if (!string.IsNullOrWhiteSpace(request.Name))
+            user.Name = request.Name;
+
+        user.UpdatedAt = DateTime.UtcNow;
+        await _userRepository.UpdateAsync(id, user);
+        return Ok(new LoginResponse
+        {
+            Id = user.Id,
+            Name = user.Name,
+            Email = user.Email,
+            Message = "User updated successfully"
+        });
+    }
 }
 
 public class SignupRequest
@@ -76,4 +110,10 @@ public class LoginResponse
     public string Name { get; set; } = null!;
     public string Email { get; set; } = null!;
     public string Message { get; set; } = null!;
+}
+
+public class UpdateUserRequest
+{
+    public string? Name { get; set; }
+    public string? Phone { get; set; }
 }
