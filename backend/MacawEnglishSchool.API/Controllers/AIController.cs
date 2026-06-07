@@ -106,12 +106,26 @@ public class AIController : ControllerBase
                 continue;
             }
 
-            // Se for 429 na última tentativa, retorna erro amigável
+            // Se for 429 na última tentativa, retorna o erro real da Gemini
             if ((int)response.StatusCode == 429)
             {
+                // Tenta extrair a mensagem real da Gemini
+                string geminiMsg = responseBody;
+                try
+                {
+                    using var errDoc = JsonDocument.Parse(responseBody);
+                    if (errDoc.RootElement.TryGetProperty("error", out var errObj) &&
+                        errObj.TryGetProperty("message", out var msg))
+                    {
+                        geminiMsg = msg.GetString() ?? responseBody;
+                    }
+                }
+                catch { }
+
                 return StatusCode(429, new AiResponse
                 {
-                    Error = "A IA está temporariamente sobrecarregada. Aguarde alguns segundos e tente novamente.",
+                    Error = $"A IA está temporariamente sobrecarregada. Aguarde alguns segundos e tente novamente.",
+                    RawResponse = geminiMsg,
                     RetryAfter = 5
                 });
             }
